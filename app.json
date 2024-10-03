@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "Kambista-challenge-app",
-    "slug": "Kambista-challenge-app",
+    "name": "Kambista",
+    "slug": "Kambista",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/kambista.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/kambista.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -16,12 +16,18 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/kambista.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.alextid97.Kambistachallengeapp"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/kambista.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "3a650657-3495-44f7-bceb-1f1c04cb5931"
+      }
     }
   }
 }
