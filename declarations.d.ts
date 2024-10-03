@@ -12,4 +12,8 @@ declare module "react-native" {
   interface ImageProps {
     className?: string;
   }
+
+  interface TouchableOpacityProps {
+    className?: string;
+  }
 }

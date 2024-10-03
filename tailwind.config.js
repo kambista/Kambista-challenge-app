@@ -11,6 +11,8 @@ module.exports = {
         "kambista-blue": "#060F26",
         "white-background": "#FFF6F6F9",
         "white-component": "#FFFFFFFF",
+        "gray-component": "#E0E0E0",
+        "kambista-green": "#00E3C2",
       },
     },
   },
