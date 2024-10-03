@@ -8,7 +8,7 @@ export default function KambistaBackground({ children }: any) {
       source={require("../assets/kambista_background.jpeg")}
     >
       <View className="h-[12%]  " />
-      <View className="h-[%]">{children}</View>
+      <View className="h-[88%]">{children}</View>
     </ImageBackground>
   );
 }

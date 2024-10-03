@@ -20,8 +20,8 @@ export default function Calculator() {
         />
       </View>
       <WhiteContainer style={"rounded-tr-none rounded-tl-none pt-8"}>
-        <CurrencyBox title="Dólares" value={1000} />
-        <CurrencyBox title="Soles" value={332} />
+        <CurrencyBox title="¿Cuánto envías" currency="Dólares" value={1000} />
+        <CurrencyBox title="Entonces recibes" currency="Soles" value={332} />
         <View className="flex-row justify-between pr-1 mt-2">
           <View>
             <Text className="font-montserrat-regular">Ahorro estimado:</Text>

@@ -15,7 +15,7 @@ export default function SubmitButton({
         onPress={onPress}
         className="bg-kambista-green rounded-lg h-12 justify-center"
       >
-        <Text className="font-montserrat-semibold text-kambista-blue text-lg self-center">
+        <Text className="font-montserrat-semibold text-kambista-blue text-md self-center">
           {text}
         </Text>
       </TouchableOpacity>
