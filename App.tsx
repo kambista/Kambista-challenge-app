@@ -41,7 +41,7 @@ export default function App() {
         <SafeAreaView className="flex-1 bg-kambista-blue">
           <Stack.Navigator
             screenOptions={{ headerShown: false, animation: "fade" }}
-            initialRouteName="CurrencyExchange"
+            initialRouteName="Login"
           >
             <Stack.Screen name="Login">{() => <Login />}</Stack.Screen>
             <Stack.Screen name="CurrencyExchange">

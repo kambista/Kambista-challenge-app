@@ -33,7 +33,7 @@ export default function Calculator() {
           </View>
         </View>
       </WhiteContainer>
-      <SubmitButton text="INICIAR OPERACIÓN" />
+      <SubmitButton style="p-4" text="INICIAR OPERACIÓN" />
     </View>
   );
 }

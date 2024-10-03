@@ -14,6 +14,9 @@ module.exports = {
         "gray-component": "#E0E0E0",
         "disabled-component": "#66666680",
         "kambista-green": "#00E3C2",
+        "gray-input": "#686868",
+        "gray-input-border": "#CCCCCC",
+        "blue-info": "#E8F3FEBF",
       },
       fontFamily: {
         "montserrat-regular": ["Montserrat_400Regular", "sans-serif"],
