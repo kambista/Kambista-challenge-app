@@ -21,10 +21,10 @@ export default function App() {
   return (
     <NavigationContainer theme={navTheme}>
       <SafeAreaProvider>
-        <SafeAreaView className="flex-1 bg-blue-500">
+        <SafeAreaView className="flex-1 bg-kambista-blue">
           <Stack.Navigator
             screenOptions={{ headerShown: false, animation: "fade" }}
-            initialRouteName="Login"
+            initialRouteName="CurrencyExchange"
           >
             <Stack.Screen name="Login">{() => <Login />}</Stack.Screen>
             <Stack.Screen name="CurrencyExchange">
