@@ -3,6 +3,12 @@ import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { NavigationContainer } from "@react-navigation/native";
 import Login from "./screens/Login";
 import CurrencyExchange from "./screens/CurrencyExchange";
+import { useFonts } from "expo-font";
+import {
+  Montserrat_400Regular,
+  Montserrat_600SemiBold,
+  Montserrat_700Bold,
+} from "@expo-google-fonts/montserrat";
 
 const Stack = createNativeStackNavigator();
 
@@ -17,7 +23,18 @@ const navTheme = {
   },
   dark: false,
 };
+
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    Montserrat_400Regular,
+    Montserrat_600SemiBold,
+    Montserrat_700Bold,
+  });
+
+  if (!fontsLoaded) {
+    return null; // Pantalla en blanco mientras se carga la fuente
+  }
+
   return (
     <NavigationContainer theme={navTheme}>
       <SafeAreaProvider>
