@@ -3,7 +3,7 @@ import FooterMenuItem from "./FooterMenuItem";
 
 export default function FooterMenu() {
   return (
-    <View className="flex flex-row bg-white-component p-3">
+    <View className="flex flex-row bg-white-component p-3 border-t border-gray-300">
       <FooterMenuItem
         source={require("../../assets/Exchange.png")}
         title="Inicio"

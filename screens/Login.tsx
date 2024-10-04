@@ -13,7 +13,6 @@ import KambistaInput from "../components/KambistaInput";
 import InfoBox from "../components/InfoBox";
 import SubmitButton from "../components/SubmitButton";
 import KambistaCheckBox from "../components/KambistaCheckBox";
-// import useCurrencyStore from "../../store/store";
 
 export default function Login() {
   const nav = useNavigation();
@@ -23,7 +22,7 @@ export default function Login() {
   return (
     <KambistaBackground>
       <ScrollView>
-        <Text className="font-montserrat-bold text-4xl self-center mb-6">
+        <Text className="font-montserrat-bold text-2xl self-center mb-6">
           ¡Empecemos!
         </Text>
         <Text className="font-montserrat-regular text-md self-center ">

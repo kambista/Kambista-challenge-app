@@ -9,6 +9,8 @@ import {
   Montserrat_600SemiBold,
   Montserrat_700Bold,
 } from "@expo-google-fonts/montserrat";
+import Accounts from "./screens/Accounts";
+import AddAccount from "./screens/AddAccount";
 
 const Stack = createNativeStackNavigator();
 
@@ -41,11 +43,15 @@ export default function App() {
         <SafeAreaView className="h-full bg-kambista-blue">
           <Stack.Navigator
             screenOptions={{ headerShown: false, animation: "fade" }}
-            initialRouteName="Login"
+            initialRouteName="AddAccount"
           >
             <Stack.Screen name="Login">{() => <Login />}</Stack.Screen>
             <Stack.Screen name="CurrencyExchange">
               {() => <CurrencyExchange />}
+            </Stack.Screen>
+            <Stack.Screen name="Accounts">{() => <Accounts />}</Stack.Screen>
+            <Stack.Screen name="AddAccount">
+              {() => <AddAccount />}
             </Stack.Screen>
           </Stack.Navigator>
         </SafeAreaView>
