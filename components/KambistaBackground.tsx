@@ -1,6 +1,6 @@
-import { ImageBackground, Text, View } from "react-native";
+import { ImageBackground, View } from "react-native";
 
-export default function KambistaBackground({ children }: any) {
+export default function KambistaBackground({ children, style }: any) {
   return (
     <ImageBackground
       className="flex-1"
@@ -8,7 +8,7 @@ export default function KambistaBackground({ children }: any) {
       source={require("../assets/kambista_background.jpeg")}
     >
       <View className="h-[12%]  " />
-      <View className="h-[88%]">{children}</View>
+      <View className={`h-[88%] ${style}`}>{children}</View>
     </ImageBackground>
   );
 }

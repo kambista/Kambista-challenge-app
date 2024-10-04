@@ -9,7 +9,8 @@ export default function KambistaInput({ title, placeholder, numeric }: any) {
       <TextInput
         keyboardType={numeric && "numeric"}
         placeholder={placeholder}
-        className="text-md  h-12 rounded-lg p-4 font-montserrat-regular text-kambista-blue border border-gray-input-border"
+        className="text-md  h-12 rounded-lg p-4 font-montserrat-regular text-kambista-blue border border-gray-input-border
+        bg-white-component"
       />
     </View>
   );

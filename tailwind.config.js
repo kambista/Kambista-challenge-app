@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       colors: {
         "kambista-blue": "#060F26",
-        "white-background": "#FFF6F6F9",
+        "white-background": "#F6F6F9",
         "white-component": "#FFFFFFFF",
         "gray-component": "#E0E0E0",
         "disabled-component": "#66666680",

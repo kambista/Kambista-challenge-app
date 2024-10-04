@@ -11,6 +11,8 @@ import {
 } from "@expo-google-fonts/montserrat";
 import Accounts from "./screens/Accounts";
 import AddAccount from "./screens/AddAccount";
+import DataExchange from "./screens/DataExchange";
+import KambistaExchange from "./screens/KambistaExchange";
 
 const Stack = createNativeStackNavigator();
 
@@ -34,7 +36,7 @@ export default function App() {
   });
 
   if (!fontsLoaded) {
-    return null; // Pantalla en blanco mientras se carga la fuente
+    return null;
   }
 
   return (
@@ -43,7 +45,7 @@ export default function App() {
         <SafeAreaView className="h-full bg-kambista-blue">
           <Stack.Navigator
             screenOptions={{ headerShown: false, animation: "fade" }}
-            initialRouteName="AddAccount"
+            initialRouteName="KambistaExchange"
           >
             <Stack.Screen name="Login">{() => <Login />}</Stack.Screen>
             <Stack.Screen name="CurrencyExchange">
@@ -52,6 +54,12 @@ export default function App() {
             <Stack.Screen name="Accounts">{() => <Accounts />}</Stack.Screen>
             <Stack.Screen name="AddAccount">
               {() => <AddAccount />}
+            </Stack.Screen>
+            <Stack.Screen name="DataExchange">
+              {() => <DataExchange />}
+            </Stack.Screen>
+            <Stack.Screen name="KambistaExchange">
+              {() => <KambistaExchange />}
             </Stack.Screen>
           </Stack.Navigator>
         </SafeAreaView>
