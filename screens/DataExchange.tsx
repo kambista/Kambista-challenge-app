@@ -1,4 +1,4 @@
-import { Image, ScrollView, Text, View } from "react-native";
+import { ScrollView, Text, View } from "react-native";
 import KambistaBackground from "../components/KambistaBackground";
 import WhiteContainer from "../components/WhiteContainer";
 import InfoBox from "../components/InfoBox";
@@ -11,7 +11,7 @@ export default function DataExchange() {
   return (
     <KambistaBackground style="bg-white-background" step={1} backButtons>
       <ScrollView>
-        <Text className="font-montserrat-regular text-md self-center ">
+        <Text className="font-montserrat-regular text-md self-center mt-5">
           El tipo de cambio podría actualizar en 00:00:00
         </Text>
         <Text className="font-montserrat-bold text-2xl self-center mt-3 text-center">

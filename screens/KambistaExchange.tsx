@@ -10,10 +10,10 @@ export default function KambistaExchange() {
   return (
     <KambistaBackground style="bg-white-background" step={2} backButtons>
       <ScrollView>
-        <Text className="font-montserrat-regular text-md self-center text-gray-input">
+        <Text className="font-montserrat-regular text-md self-center text-gray-input mt-5">
           El tipo de cambio podría actualizar en 00:00:00
         </Text>
-        <WhiteContainer style="mt-7">
+        <WhiteContainer style="mt-[14px]" outerStyle="pl-5 pr-5">
           <Image
             className="self-center w-[55px] h-[55px]"
             source={require("../assets/ExchangePig.png")}
