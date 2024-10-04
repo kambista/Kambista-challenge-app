@@ -7,7 +7,7 @@ interface InfoBoxProps {
 }
 export default function InfoBox({ info, style, infoStyle }: InfoBoxProps) {
   return (
-    <View className={`${style} rounded-lg p-4 flex-row`}>
+    <View className={`rounded-lg p-4 flex-row ${style}`}>
       <Image
         className="w-6 h-6 "
         source={require("../assets/help_circle.png")}

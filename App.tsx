@@ -13,6 +13,8 @@ import Accounts from "./screens/Accounts";
 import AddAccount from "./screens/AddAccount";
 import DataExchange from "./screens/DataExchange";
 import KambistaExchange from "./screens/KambistaExchange";
+import Voucher from "./screens/Voucher";
+import VoucherSent from "./screens/VoucherSent";
 
 const Stack = createNativeStackNavigator();
 
@@ -45,7 +47,7 @@ export default function App() {
         <SafeAreaView className="h-full bg-kambista-blue">
           <Stack.Navigator
             screenOptions={{ headerShown: false, animation: "fade" }}
-            initialRouteName="KambistaExchange"
+            initialRouteName="VoucherSent"
           >
             <Stack.Screen name="Login">{() => <Login />}</Stack.Screen>
             <Stack.Screen name="CurrencyExchange">
@@ -60,6 +62,10 @@ export default function App() {
             </Stack.Screen>
             <Stack.Screen name="KambistaExchange">
               {() => <KambistaExchange />}
+            </Stack.Screen>
+            <Stack.Screen name="Voucher">{() => <Voucher />}</Stack.Screen>
+            <Stack.Screen name="VoucherSent">
+              {() => <VoucherSent />}
             </Stack.Screen>
           </Stack.Navigator>
         </SafeAreaView>

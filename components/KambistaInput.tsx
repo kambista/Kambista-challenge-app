@@ -3,9 +3,9 @@ import { Text, TextInput, View } from "react-native";
 export default function KambistaInput({ title, placeholder, numeric }: any) {
   return (
     <View className="mb-6  min-w-[49%]">
-      <Text className="font-montserrat-semibold text-gray-input text-md mb-2">
-        {title}
-      </Text>
+      {title && (
+        <Text className="font-montserrat-bold text-md mb-2">{title}</Text>
+      )}
       <TextInput
         keyboardType={numeric && "numeric"}
         placeholder={placeholder}
