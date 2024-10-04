@@ -1,12 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
-import {
-  ImageBackground,
-  Pressable,
-  ScrollView,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { ScrollView, Text, View } from "react-native";
 import { useStore } from "../store/store";
 import KambistaBackground from "../components/KambistaBackground";
 import KambistaInput from "../components/KambistaInput";
@@ -20,7 +13,7 @@ export default function Login() {
   const infoText =
     "Tu documento de identidad debe coincidir con tus datos para evitar inconvenientes al momento de hacer una primera operación.";
   return (
-    <KambistaBackground>
+    <KambistaBackground backButtons>
       <ScrollView>
         <Text className="font-montserrat-bold text-2xl self-center mb-6">
           ¡Empecemos!

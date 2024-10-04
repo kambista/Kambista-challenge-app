@@ -1,13 +1,15 @@
-import { ScrollView, Text, View } from "react-native";
+import { Image, ScrollView, Text, View } from "react-native";
 import KambistaBackground from "../components/KambistaBackground";
 import WhiteContainer from "../components/WhiteContainer";
 import InfoBox from "../components/InfoBox";
 import KambistaInput from "../components/KambistaInput";
 import SubmitButton from "../components/SubmitButton";
+import { useNavigation } from "@react-navigation/native";
 
 export default function DataExchange() {
+  const nav = useNavigation();
   return (
-    <KambistaBackground style="bg-white-background">
+    <KambistaBackground style="bg-white-background" step={1} backButtons>
       <ScrollView>
         <Text className="font-montserrat-regular text-md self-center ">
           El tipo de cambio podría actualizar en 00:00:00
@@ -49,7 +51,10 @@ export default function DataExchange() {
             placeholder="Selecciona"
           />
           <KambistaInput title="Origen de fondos" placeholder="Selecciona" />
-          <SubmitButton text="CONTINUAR" style="" />
+          <SubmitButton
+            text="CONTINUAR"
+            onPress={() => nav.navigate("KambistaExchange" as never)}
+          />
         </View>
       </ScrollView>
     </KambistaBackground>

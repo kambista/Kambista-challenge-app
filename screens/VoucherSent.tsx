@@ -3,8 +3,10 @@ import KambistaBackground from "../components/KambistaBackground";
 import WhiteContainer from "../components/WhiteContainer";
 import CustomText from "../components/CustomText";
 import SubmitButton from "../components/SubmitButton";
+import { useNavigation } from "@react-navigation/native";
 
 export default function VoucherSent() {
+  const nav = useNavigation();
   return (
     <KambistaBackground style="bg-white-background">
       <WhiteContainer style="pt-0 border border-gray-300">
@@ -39,7 +41,10 @@ export default function VoucherSent() {
         </Text>
         <SubmitButton text="IR A MIS OPERACIONES" />
       </View>
-      <Text className="font-montserrat-bold text-gray-input text-md self-center mt-12 text-center underline">
+      <Text
+        className="font-montserrat-bold text-gray-input text-md self-center mt-12 text-center underline"
+        onPress={() => nav.navigate("CurrencyExchange" as never)}
+      >
         Volver al Inicio
       </Text>
     </KambistaBackground>

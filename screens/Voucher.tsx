@@ -4,10 +4,12 @@ import WhiteContainer from "../components/WhiteContainer";
 import KambistaInput from "../components/KambistaInput";
 import InfoBox from "../components/InfoBox";
 import SubmitButton from "../components/SubmitButton";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Voucher() {
+  const nav = useNavigation();
   return (
-    <KambistaBackground style="bg-white-background">
+    <KambistaBackground style="bg-white-background" step={3}>
       <WhiteContainer style="mt-7 p-6 border border-gray-200">
         <Image
           className="self-center w-[48px] h-[53px]"
@@ -33,7 +35,10 @@ export default function Voucher() {
         Detalle de su operación
       </Text>
       <View className="flex-row justify-center p-4 mt-[100px]">
-        <SubmitButton text="ENVÍA TU CONSTANCIA" />
+        <SubmitButton
+          text="ENVÍA TU CONSTANCIA"
+          onPress={() => nav.navigate("VoucherSent" as never)}
+        />
       </View>
     </KambistaBackground>
   );

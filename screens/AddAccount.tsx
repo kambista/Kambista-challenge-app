@@ -9,7 +9,7 @@ export default function AddAccount() {
   const infoText =
     "Operamos en Lima con todos los bancos. Y en provincia con el BCP y cuentas digitales Interbank.";
   return (
-    <KambistaBackground>
+    <KambistaBackground backButtons>
       <Text className="font-montserrat-bold text-2xl self-center mb-6">
         Agregar Cuenta
       </Text>

@@ -5,7 +5,7 @@ import FooterMenu from "../components/FooterMenu/FooterMenu";
 
 export default function Accounts() {
   return (
-    <KambistaBackground>
+    <KambistaBackground backButtons>
       <Text className="font-montserrat-bold text-2xl self-center mb-6">
         Cuentas
       </Text>

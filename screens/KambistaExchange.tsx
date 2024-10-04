@@ -3,10 +3,12 @@ import KambistaBackground from "../components/KambistaBackground";
 import WhiteContainer from "../components/WhiteContainer";
 import CustomText from "../components/CustomText";
 import SubmitButton from "../components/SubmitButton";
+import { useNavigation } from "@react-navigation/native";
 
 export default function KambistaExchange() {
+  const nav = useNavigation();
   return (
-    <KambistaBackground style="bg-white-background">
+    <KambistaBackground style="bg-white-background" step={2} backButtons>
       <ScrollView>
         <Text className="font-montserrat-regular text-md self-center text-gray-input">
           El tipo de cambio podría actualizar en 00:00:00
@@ -36,7 +38,10 @@ export default function KambistaExchange() {
           Detalle de su operación
         </Text>
         <View className="pl-4 pr-4 mt-3">
-          <SubmitButton text="Ya hice mi transferencia" />
+          <SubmitButton
+            text="Ya hice mi transferencia"
+            onPress={() => nav.navigate("Voucher" as never)}
+          />
         </View>
       </ScrollView>
     </KambistaBackground>

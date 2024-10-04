@@ -3,8 +3,10 @@ import WhiteContainer from "../WhiteContainer";
 import BoxBorder from "../BoxBorder";
 import CurrencyBox from "./CurrencyBox";
 import SubmitButton from "../SubmitButton";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Calculator() {
+  const nav = useNavigation();
   return (
     <View className="mt-6">
       <View className="flex-row pl-4 pr-4 mb-0.5">
@@ -33,7 +35,11 @@ export default function Calculator() {
           </View>
         </View>
       </WhiteContainer>
-      <SubmitButton style="p-4" text="INICIAR OPERACIÓN" />
+      <SubmitButton
+        style="p-4"
+        text="INICIAR OPERACIÓN"
+        onPress={() => nav.navigate("DataExchange" as never)}
+      />
     </View>
   );
 }
