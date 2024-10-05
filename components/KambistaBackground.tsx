@@ -44,7 +44,7 @@ export default function KambistaBackground({
           </>
         )}
       </View>
-      <View className={`h-[${step ? "7" : "5"}%] justify-end pb-1.5 `}>
+      <View className={`justify-end pb-1.5 flex-1`}>
         {step && (
           <Image
             className="self-center w-[259px] h-[20px]"
