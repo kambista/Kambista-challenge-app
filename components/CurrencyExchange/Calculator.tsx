@@ -1,9 +1,10 @@
-import { Text, View } from "react-native";
+import { Image, Text, View } from "react-native";
 import WhiteContainer from "../WhiteContainer";
 import BoxBorder from "../BoxBorder";
 import CurrencyBox from "./CurrencyBox";
 import SubmitButton from "../SubmitButton";
 import { useNavigation } from "@react-navigation/native";
+import AntDesign from "@expo/vector-icons/AntDesign";
 
 export default function Calculator() {
   const nav = useNavigation();
@@ -23,6 +24,11 @@ export default function Calculator() {
       </View>
       <WhiteContainer style={"rounded-tr-none rounded-tl-none pt-8"}>
         <CurrencyBox title="¿Cuánto envías" currency="Dólares" value={1000} />
+        <View className="bg-circle-gray p-4 self-center rounded-full absolute bottom-[120px] right-[80px] z-10">
+          <View className="bg-white-component p-2  self-center rounded-full">
+            <AntDesign name="sync" size={25} color="black" />
+          </View>
+        </View>
         <CurrencyBox title="Entonces recibes" currency="Soles" value={332} />
         <View className="flex-row justify-between pr-1 mt-2">
           <View>

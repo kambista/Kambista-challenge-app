@@ -1,26 +1,10 @@
 import { useState } from "react";
 import { Pressable, Text, TouchableOpacity } from "react-native";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import { TEXT_TYPES } from "../util/constants";
+import { getTexts } from "../util/textFormatter";
 
 export default function KambistaCheckBox({ style, texts }: any) {
   const [checked, setChecked] = useState(false);
-
-  function getTexts(texts: any) {
-    return texts.map((t: any) => {
-      const types = t.textStyles;
-      return (
-        <Text
-          key={t.text}
-          className={`font-montserrat-${
-            types.includes("bold") ? "bold" : "regular"
-          } ${types.includes(TEXT_TYPES.UNDERLINE) && TEXT_TYPES.UNDERLINE}`}
-        >
-          {t.text}
-        </Text>
-      );
-    });
-  }
 
   return (
     <TouchableOpacity

@@ -5,7 +5,7 @@ import InfoBox from "../components/InfoBox";
 import SubmitButton from "../components/SubmitButton";
 import { useNavigation } from "@react-navigation/native";
 import KambistaSelector from "../components/KambistaSelector";
-import { SELECTOR_ITEMS } from "../util/constants";
+import { SELECTOR_ITEMS, TEXT_CONSTANTS } from "../util/constants";
 
 export default function DataExchange() {
   const nav = useNavigation();
@@ -41,6 +41,7 @@ export default function DataExchange() {
             info="Tiempo estimado de espera BCP, Interbank y BanBif: 15 min. (aplica para cualquier monto). Otros bancos 1 día útil."
             style="bg-blue-info mb-6"
             infoStyle="text-blue-900"
+            texts={TEXT_CONSTANTS.EstimatedTime}
           />
         </View>
         <View className="pl-4 pr-4 ">

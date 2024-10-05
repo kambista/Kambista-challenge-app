@@ -4,6 +4,7 @@ module.exports = {
     "./App.{js,jsx,ts,tsx}",
     "./screens/**/*.{js,jsx,ts,tsx}",
     "./components/**/*.{js,jsx,ts,tsx}",
+    "./util/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
     extend: {
@@ -17,6 +18,7 @@ module.exports = {
         "gray-input": "#686868",
         "gray-input-border": "#CCCCCC",
         "blue-info": "#E8F3FEBF",
+        "circle-gray": "#19223221",
       },
       fontFamily: {
         "montserrat-regular": ["Montserrat_400Regular", "sans-serif"],

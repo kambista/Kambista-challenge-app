@@ -41,6 +41,7 @@ export default function Login() {
             info={infoText}
             style={"bg-blue-info mb-[23px]"}
             infoStyle={"text-blue-500"}
+            texts={TEXT_CONSTANTS.DocumentWarning}
           />
           <KambistaInput
             title="Número de celular"
@@ -53,11 +54,7 @@ export default function Login() {
             placeholder="Selecciona"
             items={SELECTOR_ITEMS.otherExchangeCompanies}
           />
-          <KambistaCheckBox
-            text="He leído y acepto los Términos y Condiciones"
-            style="mt-6"
-            texts={TEXT_CONSTANTS.TermsTexts}
-          />
+          <KambistaCheckBox style="mt-6" texts={TEXT_CONSTANTS.TermsTexts} />
           <KambistaCheckBox
             texts={TEXT_CONSTANTS.PoliticsTexts}
             style="mb-[30px]"

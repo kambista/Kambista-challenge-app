@@ -100,4 +100,54 @@ export const TEXT_CONSTANTS = {
       textStyles: [TEXT_TYPES.REGULAR],
     },
   ],
+  EstimatedTime: [
+    {
+      text: "Tiempo estimado de espera ",
+      textStyles: [TEXT_TYPES.REGULAR],
+    },
+    {
+      text: "BCP, Interbank y BanBif: 15 min. ",
+      textStyles: [TEXT_TYPES.BOLD],
+    },
+    {
+      text: "(aplica para cualquier monto). ",
+      textStyles: [TEXT_TYPES.REGULAR],
+    },
+    {
+      text: "Otros bancos 1 día útil.",
+      textStyles: [TEXT_TYPES.BOLD],
+    },
+  ],
+  DocumentWarning: [
+    {
+      text: "Tu documento de identidad debe coincidir con tus datos para evitar incovenientes al momento de hacer una primera operación.",
+      textStyles: [TEXT_TYPES.REGULAR],
+    },
+  ],
+  ExchangeSuggestion: [
+    {
+      text: "Transfiere desde tu app bancaria y guarda el ",
+      textStyles: [TEXT_TYPES.REGULAR],
+    },
+    {
+      text: "número o código de operación ",
+      textStyles: [TEXT_TYPES.BOLD, TEXT_TYPES.UNDERLINE],
+    },
+    {
+      text: "para el siguiente paso.",
+      textStyles: [TEXT_TYPES.REGULAR],
+    },
+  ],
+  WhereIsTheCode: [
+    {
+      text: "¿Donde encuentro el código de operación?",
+      textStyles: [TEXT_TYPES.REGULAR],
+    },
+  ],
+  AvailabilityZone: [
+    {
+      text: "Operamos en Lima con todos los bancos. Y en provincia con el BCP y cuentas digitales Interbank.",
+      textStyles: [TEXT_TYPES.REGULAR],
+    },
+  ],
 };

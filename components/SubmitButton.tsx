@@ -13,9 +13,9 @@ export default function SubmitButton({
     <View className={`flex-1 ${style}`}>
       <TouchableOpacity
         onPress={onPress}
-        className="bg-kambista-green rounded-lg h-12 justify-center"
+        className="bg-kambista-green rounded-lg h-[50px] justify-center"
       >
-        <Text className="font-montserrat-semibold text-kambista-blue text-md self-center">
+        <Text className="font-montserrat-semibold text-kambista-blue self-center">
           {text}
         </Text>
       </TouchableOpacity>

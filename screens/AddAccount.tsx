@@ -6,10 +6,12 @@ import KambistaCheckBox from "../components/KambistaCheckBox";
 import SubmitButton from "../components/SubmitButton";
 import KambistaSelector from "../components/KambistaSelector";
 import { SELECTOR_ITEMS, TEXT_CONSTANTS } from "../util/constants";
+import { useNavigation } from "@react-navigation/native";
 
 export default function AddAccount() {
   const infoText =
     "Operamos en Lima con todos los bancos. Y en provincia con el BCP y cuentas digitales Interbank.";
+  const nav = useNavigation();
   return (
     <KambistaBackground backButtons>
       <Text className="font-montserrat-bold text-2xl self-center mb-6">
@@ -34,6 +36,7 @@ export default function AddAccount() {
           style={"bg-blue-info mb-6"}
           infoStyle={"text-blue-800 text-[12px]"}
           info={infoText}
+          texts={TEXT_CONSTANTS.AvailabilityZone}
         />
         <KambistaInput
           title="Número de cuenta"
@@ -44,7 +47,11 @@ export default function AddAccount() {
           placeholder="Escribe un alias"
         />
         <KambistaCheckBox texts={TEXT_CONSTANTS.Statement} />
-        <SubmitButton text="AGREGAR CUENTA" style="mt-6" />
+        <SubmitButton
+          text="AGREGAR CUENTA"
+          style="mt-6"
+          onPress={() => nav.navigate("Accounts" as never)}
+        />
       </View>
     </KambistaBackground>
   );

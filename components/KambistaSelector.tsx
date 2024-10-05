@@ -42,12 +42,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     paddingVertical: 12,
     paddingHorizontal: 10,
-    borderWidth: 1,
-    borderColor: "gray",
-    borderRadius: 4,
-    color: "black",
-    paddingRight: 30, // Para asegurar que el texto no se superponga con el icono de dropdown
-    backgroundColor: "white", // Cambia el fondo si es necesario
+    fontFamily: "Montserrat_400Regular",
   },
   inputAndroid: {
     fontSize: 14,

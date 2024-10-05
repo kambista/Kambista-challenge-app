@@ -14,12 +14,12 @@ export default function VoucherSent() {
           className="self-center w-[120px] h-[120px] "
           source={require("../assets/MonedasCerdito.png")}
         />
-        <Text className="font-montserrat-bold text-2xl self-center mt-3 p-2 border-b border-gray-300">
+        <Text className="font-montserrat-bold text-[20px] self-center mt-3 p-2 border-b border-gray-300">
           ¡Constancia Enviada!
         </Text>
         <View className="p-5 pb-2">
           <CustomText title="Código Kambista" subTitle="km20ttff" />
-          <Text className="font-montserrat-regular text-kambista-blue text-[15px] mb-2.5">
+          <Text className="font-montserrat-regular text-kambista-blue text-[14px] mb-2.5">
             *Usa tu código para dar seguimiento a tu operación.
           </Text>
           <CustomText title="Monto a recibir" subTitle="S/ 343.00" />
@@ -29,10 +29,10 @@ export default function VoucherSent() {
       <View className=" justify-center p-4 mt-3">
         <View className="flex-row justify-center mb-6">
           <Image
-            className="w-[27px] h-[25px] mr-3"
+            className="w-[27px] h-[24px] mr-3"
             source={require("../assets/Star.png")}
           />
-          <Text className="font-montserrat-semibold text-kambista-blue text-[15px] underline self-center">
+          <Text className="font-montserrat-semibold text-kambista-blue text-[16px] underline self-center">
             Recomienda y gana
           </Text>
         </View>
@@ -42,7 +42,7 @@ export default function VoucherSent() {
         <SubmitButton text="IR A MIS OPERACIONES" />
       </View>
       <Text
-        className="font-montserrat-bold text-gray-input text-md self-center mt-12 text-center underline"
+        className="font-montserrat-bold text-gray-input text-md self-center mt-16 text-center underline"
         onPress={() => nav.navigate("CurrencyExchange" as never)}
       >
         Volver al Inicio

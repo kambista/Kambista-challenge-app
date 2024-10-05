@@ -5,12 +5,13 @@ import KambistaInput from "../components/KambistaInput";
 import InfoBox from "../components/InfoBox";
 import SubmitButton from "../components/SubmitButton";
 import { useNavigation } from "@react-navigation/native";
+import { TEXT_CONSTANTS } from "../util/constants";
 
 export default function Voucher() {
   const nav = useNavigation();
   return (
     <KambistaBackground style="bg-white-background" step={3}>
-      <WhiteContainer style="mt-7 p-6 border border-gray-200">
+      <WhiteContainer style="mt-7 p-6 border border-gray-200 pb-[51px]">
         <Image
           className="self-center w-[48px] h-[53px]"
           source={require("../assets/Voucher.png")}
@@ -25,7 +26,8 @@ export default function Voucher() {
         <InfoBox
           info="¿Donde encuentro el código de operación?"
           style="p-0 items-center"
-          infoStyle="text-kambista-blue text-[12px]"
+          infoStyle="text-[12px]"
+          texts={TEXT_CONSTANTS.WhereIsTheCode}
         />
         <Text className="font-montserrat-regular text-gray-input text-[15px]  mt-6">
           Verificaremos tu operación para depositar S/343.00 a tu cuenta.
