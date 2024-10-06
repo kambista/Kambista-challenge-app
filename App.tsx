@@ -1,13 +1,47 @@
 import { StatusBar } from "expo-status-bar";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
-import { RegisterPage } from "./app/auth/register";
-import { TabsLayout } from "./app/tabs/tab-layout";
+import { RegisterPage } from "./src/app/auth/register";
+import { TabsLayout } from "./src/app/tabs/tab-layout";
+import { useFonts } from "expo-font";
+import * as SplashScreen from "expo-splash-screen";
+import {
+	Montserrat_300Light,
+	Montserrat_400Regular,
+	Montserrat_500Medium,
+	Montserrat_600SemiBold,
+	Montserrat_700Bold,
+	Montserrat_900Black,
+} from "@expo-google-fonts/montserrat";
+import { useEffect } from "react";
+// import "react-native-reanimated";
+
+SplashScreen.preventAutoHideAsync();
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+	const [loaded] = useFonts({
+		Montserrat_300Light,
+		Montserrat_400Regular,
+		Montserrat_500Medium,
+		Montserrat_600SemiBold,
+		Montserrat_700Bold,
+		Montserrat_900Black,
+	});
+
+	useEffect(() => {
+		if (loaded) {
+			SplashScreen.hideAsync();
+		}
+	}, [loaded]);
+
+	if (!loaded) {
+		return null;
+	}
+
 	return (
+		// <View onLayout={}>
 		<NavigationContainer>
 			<Stack.Navigator
 				screenOptions={{ headerShown: false }}
@@ -17,5 +51,7 @@ export default function App() {
 				<Stack.Screen name="tabs" component={TabsLayout} />
 			</Stack.Navigator>
 		</NavigationContainer>
+
+		// </View>
 	);
 }
