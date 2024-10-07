@@ -43,6 +43,7 @@ export default function App() {
 
 	return (
 		<AuthProvider>
+			<StatusBar style="light" backgroundColor={"#060F26"} />
 			<NavigationContainer>
 				<Stack.Navigator
 					screenOptions={{ headerShown: false }}
