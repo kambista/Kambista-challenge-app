@@ -6,14 +6,18 @@ import {
 } from "@/src/components";
 import IconStar from "@/src/constants/images/icon-star";
 import { useTransferenciaContext } from "@/src/hooks/context.hooks";
-import { Link } from "@react-navigation/native";
-import { ScrollView, Text, View, Image } from "react-native";
+import { RootStackParamList } from "@/src/interface/router.interface";
+import { NavigationProp, useNavigation } from "@react-navigation/native";
+import { ScrollView, Text, View, Image, Pressable } from "react-native";
 
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+
+type NavigationProps = NavigationProp<RootStackParamList>;
 
 export const HomeResumenPage = () => {
 	const inset = useSafeAreaInsets();
 	const { transferenciaMoney } = useTransferenciaContext();
+	const navigation = useNavigation<NavigationProps>();
 
 	const handleNext = () => {};
 
@@ -78,12 +82,14 @@ export const HomeResumenPage = () => {
 						onPress={() => handleNext()}
 					/>
 
-					<Link
-						to={{ screen: "home" }}
-						className="mt-4 font-monserrat600 text-sm leading-[17px] underline text-center"
+					<Pressable
+						onPress={() => navigation.navigate("home")}
+						className="mt-4"
 					>
-						Volver al Inicio
-					</Link>
+						<Text className="font-monserrat600 text-sm leading-[17px] underline text-center">
+							Volver al Inicio
+						</Text>
+					</Pressable>
 				</View>
 			</View>
 		</ScrollView>

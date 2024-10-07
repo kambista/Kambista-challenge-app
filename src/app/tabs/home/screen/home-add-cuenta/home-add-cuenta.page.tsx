@@ -51,7 +51,7 @@ export const HomeAddCuentaPage = () => {
 				className="flex-1 bg-[#F6F6F9] relative"
 				style={{ paddingTop: inset.top, paddingBottom: inset.bottom }}
 			>
-				<HeaderComponent />
+				<HeaderComponent isClose={false} />
 
 				<View className="p-4 py-[34px] flex-1">
 					<TitleComponent

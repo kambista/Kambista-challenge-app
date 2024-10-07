@@ -18,6 +18,7 @@ interface Props {
 	touched?: boolean;
 	readOnly?: boolean;
 	classNameContainer?: string;
+	maxLength?: number;
 	onBlur?: (e: NativeSyntheticEvent<TextInputFocusEventData>) => void;
 }
 

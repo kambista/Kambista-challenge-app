@@ -92,6 +92,7 @@ export const FormRegisterComponent = () => {
 					keyboardType="numeric"
 					placeholder="Número Doc"
 					classNameContainer="w-[48%]"
+					maxLength={11}
 					value={values.numDocument}
 					onChangeText={handleChange("numDocument")}
 					onBlur={handleBlur("numDocument")}
@@ -116,6 +117,7 @@ export const FormRegisterComponent = () => {
 					label="Número de celular"
 					placeholder="Número de celular"
 					keyboardType="numeric"
+					maxLength={9}
 					value={values.phone}
 					onChangeText={handleChange("phone")}
 					onBlur={handleBlur("phone")}

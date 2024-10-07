@@ -20,7 +20,11 @@ export default function HomeLayout() {
 			>
 				<Stack.Screen name="home" component={HomePage} />
 				<Stack.Screen name="home/cuentas" component={HomeCuentasPage} />
-				<Stack.Screen name="home/add-cuenta" component={HomeAddCuentaPage} />
+				<Stack.Screen
+					name="home/add-cuenta"
+					component={HomeAddCuentaPage}
+					options={{ presentation: "modal" }}
+				/>
 				<Stack.Screen name="home/payment-1" component={HomePayment1Page} />
 				<Stack.Screen name="home/payment-2" component={HomePayment2Page} />
 				<Stack.Screen name="home/payment-3" component={HomePayment3Page} />

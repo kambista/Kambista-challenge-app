@@ -148,7 +148,7 @@ export const ConvertMoneyHomeComponent = () => {
 		destinationCurrency: string
 	) => {
 		const { rpta, error } = await homeService.calculateConvert({
-			amount,
+			amount: amount || "0",
 			originCurrency,
 			destinationCurrency,
 		});
@@ -174,29 +174,33 @@ export const ConvertMoneyHomeComponent = () => {
 			</View>
 
 			<View className="w-full bg-white border-t border-gray-300 py-5 px-4 rounded-b-md">
-				<View className="relative">
-					<ItemMoneyComponent
-						classNameContainer={twMerge("mb-2.5")}
-						value={values.origin.value}
-						nameCurrency={values.origin.currency}
-						onChangeText={handleChangeText}
-						title="¿Cuánto envías?"
-					/>
-					<ItemMoneyComponent
-						value={values.destiny.value}
-						nameCurrency={values.destiny.currency}
-						title="Entonces recibes"
-						readOnly
-					/>
-					<ButtonChangeMoneyComponent onPress={handleChangeMoney} />
-				</View>
+				{typeSale === 1 ? (
+					<>
+						<View className="relative">
+							<ItemMoneyComponent
+								classNameContainer={twMerge("mb-2.5")}
+								value={values.origin.value}
+								nameCurrency={values.origin.currency}
+								onChangeText={handleChangeText}
+								title="¿Cuánto envías?"
+							/>
+							<ItemMoneyComponent
+								value={values.destiny.value}
+								nameCurrency={values.destiny.currency}
+								title="Entonces recibes"
+								readOnly
+							/>
+							<ButtonChangeMoneyComponent onPress={handleChangeMoney} />
+						</View>
 
-				{dataResult ? (
-					<TextResumenComponent
-						amount={dataResult.savings.amount}
-						currency={dataResult.savings.currency}
-						rate={dataResult.rate}
-					/>
+						{dataResult ? (
+							<TextResumenComponent
+								amount={dataResult.savings.amount}
+								currency={dataResult.savings.currency}
+								rate={dataResult.rate}
+							/>
+						) : null}
+					</>
 				) : null}
 			</View>
 
