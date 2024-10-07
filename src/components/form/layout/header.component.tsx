@@ -28,7 +28,7 @@ export const HeaderComponent = ({ isBack = true, isClose = true }: Props) => {
 			) : (
 				<View />
 			)}
-			<Image source={require("@/assets/images/logo.png")} />
+			<Image source={require("../../../../assets/images/logo.png")} />
 
 			{isClose ? (
 				<Pressable onPress={handleClose} className="px-4">

@@ -4,16 +4,12 @@ import { twMerge } from "tailwind-merge";
 import { ButtonChangeMoneyComponent } from "./button-change-money.component";
 import { useFormik } from "formik";
 
-// import {
-// 	useAuthContext,
-// 	useTransferenciaContext,
-// } from "@/shared/hooks/context.hook";
 import { ItemMoneyComponent } from "./item-money.component";
 import { ButtonComponent } from "../../../../components/form";
 import { TextResumenComponent } from "./text-resumen.component";
 import { ItemTabsOperationComponent } from "./item-tabs-operation.component";
 import { DataResultCalculeProps } from "../interface/home.interface";
-import { dataTypeSale } from "../contanst/data-home";
+import { dataTypeSale } from "../../../../constants/data/data-home";
 import { useNavigation } from "@react-navigation/native";
 import { homeService } from "../service/home.service";
 import { useAuthContext } from "../../../../hooks/context.hooks";
@@ -62,9 +58,7 @@ export const ConvertMoneyHomeComponent = () => {
 		// handleSaveTransferencia(parameter);
 
 		if (user) {
-			// navigation.navigate(
-			// 	 "/(home)/cuentas",
-			// );
+			navigation.navigate("cuentas");
 		} else {
 			navigation.navigate("register");
 		}
