@@ -5,14 +5,14 @@ import { ButtonChangeMoneyComponent } from "./button-change-money.component";
 import { useFormik } from "formik";
 
 import { ItemMoneyComponent } from "./item-money.component";
-import { ButtonComponent } from "../../../../components/form";
+import { ButtonComponent } from "../../../../../../components/form";
 import { TextResumenComponent } from "./text-resumen.component";
 import { ItemTabsOperationComponent } from "./item-tabs-operation.component";
 import { DataResultCalculeProps } from "../interface/home.interface";
-import { dataTypeSale } from "../../../../constants/data/data-home";
+import { dataTypeSale } from "../../../../../../constants/data/data-home";
 import { useNavigation } from "@react-navigation/native";
 import { homeService } from "../service/home.service";
-import { useAuthContext } from "../../../../hooks/context.hooks";
+import { useAuthContext } from "../../../../../../hooks/context.hooks";
 
 export const ConvertMoneyHomeComponent = () => {
 	const navigation = useNavigation();
@@ -58,7 +58,7 @@ export const ConvertMoneyHomeComponent = () => {
 		// handleSaveTransferencia(parameter);
 
 		if (user) {
-			navigation.navigate("cuentas");
+			navigation.navigate("home/cuentas");
 		} else {
 			navigation.navigate("register");
 		}

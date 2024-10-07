@@ -50,7 +50,7 @@ export const FormRegisterComponent = () => {
 			};
 
 			handleSaveUser(parameter);
-			navigation.navigate("/cuentas");
+			navigation.navigate("home/cuentas");
 		} catch (error) {
 			console.log(error);
 		} finally {

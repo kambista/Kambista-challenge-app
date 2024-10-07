@@ -1,4 +1,4 @@
-import { httpClient } from "../../../../service/api-conig";
+import { httpClient } from "../../../../../../service/api-conig";
 import { CalculateParameterProps } from "../interface/home.interface";
 
 const calculateConvert = async (parameter: CalculateParameterProps) => {
