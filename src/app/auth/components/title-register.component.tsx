@@ -1,5 +1,5 @@
 import { Text, View } from "react-native";
-import { TitleComponent } from "../../../components/form/general";
+import { TitleComponent } from "../../../components/general";
 
 export const FormTitleComponent = () => {
 	return (

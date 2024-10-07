@@ -1,7 +1,7 @@
+import { dataCurrency } from "@/src/constants/data/data-home";
 import { Pressable, Text } from "react-native";
 import { View } from "react-native";
 import { twMerge } from "tailwind-merge";
-import { dataCurrency } from "../../../../../../constants/data/data-home";
 
 interface Props {
 	active: number;

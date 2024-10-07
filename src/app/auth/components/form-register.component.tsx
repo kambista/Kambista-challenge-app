@@ -1,5 +1,5 @@
 import Octicons from "@expo/vector-icons/Octicons";
-import { useNavigation } from "@react-navigation/native";
+import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { useFormik } from "formik";
 import { Text, View } from "react-native";
 import {
@@ -15,10 +15,13 @@ import {
 	SelectComponent,
 } from "../../../components/form";
 import { dataCompany, dataTypeDocument } from "../../../constants/data/data";
-import { InfoComponent } from "../../../components/form/general";
+import { InfoComponent } from "../../../components/general";
+import { RootStackParamList } from "../../../interface/router.interface";
+
+type NavigationProps = NavigationProp<RootStackParamList>;
 
 export const FormRegisterComponent = () => {
-	const navigation = useNavigation();
+	const navigation = useNavigation<NavigationProps>();
 	const [loading, setLoading] = useState<boolean>(false);
 	const { handleSaveUser } = useAuthContext();
 

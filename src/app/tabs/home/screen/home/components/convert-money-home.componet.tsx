@@ -5,20 +5,26 @@ import { ButtonChangeMoneyComponent } from "./button-change-money.component";
 import { useFormik } from "formik";
 
 import { ItemMoneyComponent } from "./item-money.component";
-import { ButtonComponent } from "../../../../../../components/form";
+
 import { TextResumenComponent } from "./text-resumen.component";
 import { ItemTabsOperationComponent } from "./item-tabs-operation.component";
 import { DataResultCalculeProps } from "../interface/home.interface";
-import { dataTypeSale } from "../../../../../../constants/data/data-home";
-import { useNavigation } from "@react-navigation/native";
+
+import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { homeService } from "../service/home.service";
+
+import { RootStackParamList } from "@/src/interface/router.interface";
 import {
 	useAuthContext,
 	useTransferenciaContext,
-} from "../../../../../../hooks/context.hooks";
+} from "@/src/hooks/context.hooks";
+import { dataTypeSale } from "@/src/constants/data/data-home";
+import { ButtonComponent } from "@/src/components";
+
+type NavigationProps = NavigationProp<RootStackParamList>;
 
 export const ConvertMoneyHomeComponent = () => {
-	const navigation = useNavigation();
+	const navigation = useNavigation<NavigationProps>();
 	const [typeSale, setTypeSale] = useState<number>(1);
 	const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
 	const [dataResult, setDataResult] = useState<DataResultCalculeProps | null>(

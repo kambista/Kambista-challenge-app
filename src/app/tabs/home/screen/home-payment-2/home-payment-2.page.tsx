@@ -1,16 +1,23 @@
 import { ScrollView, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { useNavigation } from "@react-navigation/native";
-import { useTransferenciaContext } from "../../../../../hooks/context.hooks";
-import { HeaderComponent } from "../../../../../components/form/layout/header.component";
+import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { LineNavegacionComponent } from "../../components";
-import { ButtonComponent, CardComponent } from "../../../../../components/form";
-import IconTransferencia from "../../../../../constants/images/icon-transferencia";
-import { TextCopyComponent } from "../../../../../components/form/general";
+
+import { RootStackParamList } from "@/src/interface/router.interface";
+import {
+	ButtonComponent,
+	CardComponent,
+	HeaderComponent,
+	TextCopyComponent,
+} from "@/src/components";
+import { useTransferenciaContext } from "@/src/hooks/context.hooks";
+import IconTransferencia from "@/src/constants/images/icon-transferencia";
+
+type NavigationProps = NavigationProp<RootStackParamList>;
 
 export const HomePayment2Page = () => {
 	const inset = useSafeAreaInsets();
-	const navigation = useNavigation();
+	const navigation = useNavigation<NavigationProps>();
 	const { transferenciaMoney } = useTransferenciaContext();
 
 	const handleNext = () => {

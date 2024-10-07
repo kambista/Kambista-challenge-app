@@ -2,15 +2,20 @@ import { Pressable, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
-import { useNavigation } from "@react-navigation/native";
-import { HeaderComponent } from "../../../../../components/form/layout/header.component";
-import { TitleComponent } from "../../../../../components/form/general";
-import { SelectComponent } from "../../../../../components/form";
-import { dataCuentas } from "../../../../../constants/data/data-home";
+import { NavigationProp, useNavigation } from "@react-navigation/native";
+import {
+	HeaderComponent,
+	SelectComponent,
+	TitleComponent,
+} from "@/src/components";
+import { dataCuentas } from "@/src/constants/data/data-home";
+import { RootStackParamList } from "@/src/interface/router.interface";
+
+type NavigationProps = NavigationProp<RootStackParamList>;
 
 export const HomeCuentasPage = () => {
 	const inset = useSafeAreaInsets();
-	const navigation = useNavigation();
+	const navigation = useNavigation<NavigationProps>();
 
 	const handleChangeCuenta = (value: { id: number; name: string }) => {
 		console.log(value);

@@ -1,7 +1,7 @@
 import Octicons from "@expo/vector-icons/Octicons";
 import { clsx } from "clsx";
 import { ReactNode, useEffect, useState } from "react";
-import { Pressable, Text, TouchableOpacity, View } from "react-native";
+import { Pressable, Text, View } from "react-native";
 import { twMerge } from "tailwind-merge";
 
 interface Props {

@@ -1,30 +1,34 @@
 import { Feather } from "@expo/vector-icons";
-import { useNavigation } from "@react-navigation/native";
+import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { useFormik } from "formik";
 import { ScrollView, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { HeaderComponent } from "../../../../../components/form/layout/header.component";
-import {
-	ButtonComponent,
-	CardComponent,
-	SelectComponent,
-} from "../../../../../components/form";
-import { InfoComponent } from "../../../../../components/form/general";
-import {
-	dataBancos,
-	dataCuentas,
-	dataFondos,
-} from "../../../../../constants/data/data-home";
-import { useTransferenciaContext } from "../../../../../hooks/context.hooks";
+
 import {
 	initialValuesPayment1Formik,
 	validateSchemaPayement1Formik,
 } from "./fomik/payment-1.formik";
 import { LineNavegacionComponent } from "../../components";
+import { RootStackParamList } from "@/src/interface/router.interface";
+import { useTransferenciaContext } from "@/src/hooks/context.hooks";
+import {
+	ButtonComponent,
+	CardComponent,
+	HeaderComponent,
+	InfoComponent,
+	SelectComponent,
+} from "@/src/components";
+import {
+	dataBancos,
+	dataCuentas,
+	dataFondos,
+} from "@/src/constants/data/data-home";
+
+type NavigationProps = NavigationProp<RootStackParamList>;
 
 export const HomePayment1Page = () => {
 	const inset = useSafeAreaInsets();
-	const navigation = useNavigation();
+	const navigation = useNavigation<NavigationProps>();
 	const { transferenciaMoney } = useTransferenciaContext();
 
 	const { values, setFieldValue, errors, touched, handleSubmit, isValid } =

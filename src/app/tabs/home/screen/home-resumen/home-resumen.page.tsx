@@ -1,14 +1,17 @@
+import {
+	ButtonComponent,
+	CardComponent,
+	HeaderComponent,
+	TextCopyComponent,
+} from "@/src/components";
+import IconStar from "@/src/constants/images/icon-star";
+import { useTransferenciaContext } from "@/src/hooks/context.hooks";
 import { Link } from "@react-navigation/native";
 import { ScrollView, Text, View, Image } from "react-native";
 
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { useTransferenciaContext } from "../../../../../hooks/context.hooks";
-import { HeaderComponent } from "../../../../../components/form/layout/header.component";
-import { ButtonComponent, CardComponent } from "../../../../../components/form";
-import { TextCopyComponent } from "../../../../../components/form/general";
-import IconStar from "../../../../../constants/images/icon-star";
 
-export const ResumenPage = () => {
+export const HomeResumenPage = () => {
 	const inset = useSafeAreaInsets();
 	const { transferenciaMoney } = useTransferenciaContext();
 

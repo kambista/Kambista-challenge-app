@@ -1,5 +1,5 @@
 import { ScrollView, View } from "react-native";
-import { HeaderComponent } from "../../components/form/layout/header.component";
+import { HeaderComponent } from "../../components/layout/header.component";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { FormRegisterComponent } from "./components/form-register.component";
 import { FormTitleComponent } from "./components/title-register.component";

@@ -6,8 +6,10 @@ import { HomePayment1Page } from "./screen/home-payment-1/home-payment-1.page";
 import { HomePayment2Page } from "./screen/home-payment-2/home-payment-2.page";
 import { HomeCuentasPage } from "./screen/home-cuentas/home-cuentas.page";
 import { HomeAddCuentaPage } from "./screen/home-add-cuenta/home-add-cuenta.page";
+import { HomeResumenPage } from "./screen/home-resumen/home-resumen.page";
+import { RootStackParamList } from "@/src/interface/router.interface";
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function HomeLayout() {
 	return (
@@ -22,6 +24,7 @@ export default function HomeLayout() {
 				<Stack.Screen name="home/payment-1" component={HomePayment1Page} />
 				<Stack.Screen name="home/payment-2" component={HomePayment2Page} />
 				<Stack.Screen name="home/payment-3" component={HomePayment3Page} />
+				<Stack.Screen name="home/resumen" component={HomeResumenPage} />
 			</Stack.Navigator>
 		</TransferenciaProvider>
 	);

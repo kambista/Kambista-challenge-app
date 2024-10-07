@@ -1,6 +1,7 @@
+import { RootStackParamList } from "@/src/interface/router.interface";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import Octicons from "@expo/vector-icons/Octicons";
-import { useNavigation } from "@react-navigation/native";
+import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { Image, Pressable, View } from "react-native";
 
 interface Props {
@@ -8,8 +9,10 @@ interface Props {
 	isClose?: boolean;
 }
 
+type NavigationProps = NavigationProp<RootStackParamList>;
+
 export const HeaderComponent = ({ isBack = true, isClose = true }: Props) => {
-	const navigation = useNavigation();
+	const navigation = useNavigation<NavigationProps>();
 
 	const handlePress = () => {
 		navigation.goBack();
@@ -28,7 +31,7 @@ export const HeaderComponent = ({ isBack = true, isClose = true }: Props) => {
 			) : (
 				<View />
 			)}
-			<Image source={require("../../../../assets/images/logo.png")} />
+			<Image source={require("@/assets/images/logo.png")} />
 
 			{isClose ? (
 				<Pressable onPress={handleClose} className="px-4">

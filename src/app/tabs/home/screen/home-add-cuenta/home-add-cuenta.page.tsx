@@ -1,32 +1,31 @@
 import Feather from "@expo/vector-icons/Feather";
-import { useNavigation } from "@react-navigation/native";
+import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { useFormik } from "formik";
 import { ScrollView, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { HeaderComponent } from "../../../../../components/form/layout/header.component";
-import {
-	InfoComponent,
-	TitleComponent,
-} from "../../../../../components/form/general";
-import {
-	ButtonComponent,
-	CheckboxComponent,
-	InputComponent,
-	SelectComponent,
-} from "../../../../../components/form";
-import {
-	dataBancos,
-	dataTipoCuentas,
-} from "../../../../../constants/data/data-home";
+
 import {
 	initialValuesAddCuentaFormik,
 	validateSchemaAddCuentaFormik,
 } from "./formik/add-cuenta.formik";
 import { ToggleCurrencyComponent } from "./components/toggle-currency.component";
+import { RootStackParamList } from "@/src/interface/router.interface";
+import {
+	ButtonComponent,
+	CheckboxComponent,
+	HeaderComponent,
+	InfoComponent,
+	InputComponent,
+	SelectComponent,
+	TitleComponent,
+} from "@/src/components";
+import { dataBancos, dataTipoCuentas } from "@/src/constants/data/data-home";
+
+type NavigationProps = NavigationProp<RootStackParamList>;
 
 export const HomeAddCuentaPage = () => {
 	const inset = useSafeAreaInsets();
-	const navigation = useNavigation();
+	const navigation = useNavigation<NavigationProps>();
 
 	const {
 		values,

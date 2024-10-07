@@ -1,7 +1,8 @@
-import { Text, View } from "react-native";
-import { HeaderHomeComponent } from "../../components/header-home.component";
+import { View } from "react-native";
+
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { ConvertMoneyHomeComponent } from "./components/convert-money-home.componet";
+import { HeaderHomeComponent } from "../../components";
 
 export const HomePage = () => {
 	const inset = useSafeAreaInsets();

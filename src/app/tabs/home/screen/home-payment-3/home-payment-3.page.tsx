@@ -1,23 +1,28 @@
-import { useNavigation } from "@react-navigation/native";
+import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { ScrollView, Text, View } from "react-native";
 
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 
 import { useState } from "react";
-import { useTransferenciaContext } from "../../../../../hooks/context.hooks";
-import { HeaderComponent } from "../../../../../components/form/layout/header.component";
+
 import { LineNavegacionComponent } from "../../components";
+
+import { RootStackParamList } from "@/src/interface/router.interface";
+import { useTransferenciaContext } from "@/src/hooks/context.hooks";
 import {
 	ButtonComponent,
 	CardComponent,
+	HeaderComponent,
 	InputComponent,
-} from "../../../../../components/form";
-import IconConstancia from "../../../../../constants/images/icon-constancia";
+} from "@/src/components";
+import IconConstancia from "@/src/constants/images/icon-constancia";
+
+type NavigationProps = NavigationProp<RootStackParamList>;
 
 export const HomePayment3Page = () => {
 	const inset = useSafeAreaInsets();
-	const navigation = useNavigation();
+	const navigation = useNavigation<NavigationProps>();
 	const { transferenciaMoney } = useTransferenciaContext();
 	const [valueText, setValueText] = useState<string>("");
 
