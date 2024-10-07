@@ -22,7 +22,7 @@ import {
 } from "./fomik/payment-1.formik";
 import { LineNavegacionComponent } from "../../components";
 
-export default function HomePayment1Page() {
+export const HomePayment1Page = () => {
 	const inset = useSafeAreaInsets();
 	const navigation = useNavigation();
 	const { transferenciaMoney } = useTransferenciaContext();
@@ -146,4 +146,4 @@ export default function HomePayment1Page() {
 			</View>
 		</ScrollView>
 	);
-}
+};

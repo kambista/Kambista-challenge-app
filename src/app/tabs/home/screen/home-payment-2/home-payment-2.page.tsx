@@ -8,7 +8,7 @@ import { ButtonComponent, CardComponent } from "../../../../../components/form";
 import IconTransferencia from "../../../../../constants/images/icon-transferencia";
 import { TextCopyComponent } from "../../../../../components/form/general";
 
-export default function HomePayment2Page() {
+export const HomePayment2Page = () => {
 	const inset = useSafeAreaInsets();
 	const navigation = useNavigation();
 	const { transferenciaMoney } = useTransferenciaContext();
@@ -104,4 +104,4 @@ export default function HomePayment2Page() {
 			</View>
 		</ScrollView>
 	);
-}
+};

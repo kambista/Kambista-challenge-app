@@ -16,7 +16,7 @@ export const HeaderComponent = ({ isBack = true, isClose = true }: Props) => {
 	};
 
 	const handleClose = () => {
-		// navigation.navigate("home");
+		navigation.navigate("home");
 	};
 
 	return (

@@ -8,7 +8,7 @@ import { TitleComponent } from "../../../../../components/form/general";
 import { SelectComponent } from "../../../../../components/form";
 import { dataCuentas } from "../../../../../constants/data/data-home";
 
-export default function HomeCuentasPage() {
+export const HomeCuentasPage = () => {
 	const inset = useSafeAreaInsets();
 	const navigation = useNavigation();
 
@@ -46,4 +46,4 @@ export default function HomeCuentasPage() {
 			</Pressable>
 		</View>
 	);
-}
+};

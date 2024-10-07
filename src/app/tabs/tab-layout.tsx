@@ -1,11 +1,15 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { HomePage } from "./home/screen/home/home.page";
+
 import HomeLayout from "./home/home-layout";
 import IconInicio from "../../constants/images/icon-inicio";
 import IconCuentas from "../../constants/images/icon-cuentas";
 import IconOperacions from "../../constants/images/icon-operaciones";
 import IconNotificaciones from "../../constants/images/icon-notificaciones";
 import IconPerfil from "../../constants/images/icon-perfil";
+import { OperacionesPage } from "./operaciones/operaciones.page";
+import { PerfilPage } from "./perfil/perfil.page";
+import { NotificacionesPage } from "./notificaciones/notificaciones.page";
+import { CuentasPage } from "./cuentas/cuentas.page";
 
 const Tab = createBottomTabNavigator();
 
@@ -43,7 +47,7 @@ export const TabsLayout = () => {
 					title: "Operaciones",
 					tabBarIcon: () => <IconOperacions />,
 				}}
-				component={HomeLayout}
+				component={OperacionesPage}
 			/>
 			<Tab.Screen
 				name="cuentas"
@@ -51,7 +55,7 @@ export const TabsLayout = () => {
 					title: "Cuentas",
 					tabBarIcon: () => <IconCuentas />,
 				}}
-				component={HomeLayout}
+				component={CuentasPage}
 			/>
 			<Tab.Screen
 				name="notificaciones"
@@ -59,7 +63,7 @@ export const TabsLayout = () => {
 					title: "Notificaciones",
 					tabBarIcon: () => <IconNotificaciones />,
 				}}
-				component={HomeLayout}
+				component={NotificacionesPage}
 			/>
 			<Tab.Screen
 				name="perfil"
@@ -67,7 +71,7 @@ export const TabsLayout = () => {
 					title: "Perfil",
 					tabBarIcon: () => <IconPerfil />,
 				}}
-				component={HomeLayout}
+				component={PerfilPage}
 			/>
 		</Tab.Navigator>
 	);
