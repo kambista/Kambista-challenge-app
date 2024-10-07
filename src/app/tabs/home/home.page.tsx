@@ -1,6 +1,7 @@
 import { Text, View } from "react-native";
 import { HeaderHomeComponent } from "./components/header-home.component";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { ConvertMoneyHomeComponent } from "./components/convert-money-home.componet";
 
 export const HomePage = () => {
 	const inset = useSafeAreaInsets();
@@ -11,6 +12,7 @@ export const HomePage = () => {
 		>
 			<View className="p-4">
 				<HeaderHomeComponent />
+				<ConvertMoneyHomeComponent />
 			</View>
 		</View>
 	);

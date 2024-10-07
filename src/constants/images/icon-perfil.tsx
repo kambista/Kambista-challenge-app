@@ -1,7 +1,7 @@
 import * as React from "react";
 import Svg, { G, Path, Defs, ClipPath } from "react-native-svg";
 
-export default function TabPerfilIcon() {
+export default function IconPerfil() {
 	return (
 		<Svg width={20} height={25} viewBox="0 0 20 25" fill="none">
 			<G clipPath="url(#clip0_5_298)" fill="#060F26">

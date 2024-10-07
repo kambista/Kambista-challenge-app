@@ -1,7 +1,7 @@
 import * as React from "react";
 import Svg, { Path } from "react-native-svg";
 
-export default function TabCuentasIcon() {
+export default function IconCuentas() {
 	return (
 		<Svg width={29} height={20} viewBox="0 0 29 20" fill="none">
 			<Path

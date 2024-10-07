@@ -1,7 +1,7 @@
 import * as React from "react";
 import Svg, { Path } from "react-native-svg";
 
-export default function TabOperacionsIcon() {
+export default function IconOperacions() {
 	return (
 		<Svg width={26} height={27} viewBox="0 0 26 27" fill="none">
 			<Path

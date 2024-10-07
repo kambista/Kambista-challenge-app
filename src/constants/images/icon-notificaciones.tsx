@@ -1,7 +1,7 @@
 import * as React from "react";
 import Svg, { Path } from "react-native-svg";
 
-export default function TabNotificacionesIcon() {
+export default function IconNotificaciones() {
 	return (
 		<Svg width={24} height={28} viewBox="0 0 24 28" fill="none">
 			<Path

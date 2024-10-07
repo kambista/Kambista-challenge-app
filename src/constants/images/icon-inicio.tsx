@@ -1,7 +1,7 @@
 import * as React from "react";
 import Svg, { Path } from "react-native-svg";
 
-export default function TabInicioIcon() {
+export default function IconInicio() {
 	return (
 		<Svg width={28} height={28} viewBox="0 0 28 28" fill="none">
 			<Path
