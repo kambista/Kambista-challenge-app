@@ -16,6 +16,7 @@ import { DataResultCalculeProps } from "../interface/home.interface";
 import { dataTypeSale } from "../contanst/data-home";
 import { useNavigation } from "@react-navigation/native";
 import { homeService } from "../service/home.service";
+import { useAuthContext } from "../../../../hooks/context.hooks";
 
 export const ConvertMoneyHomeComponent = () => {
 	const navigation = useNavigation();
@@ -25,7 +26,7 @@ export const ConvertMoneyHomeComponent = () => {
 		null
 	);
 	// const { handleSaveTransferencia } = useTransferenciaContext();
-	// const { user } = useAuthContext();
+	const { user } = useAuthContext();
 
 	const { values, setFieldValue, setValues } = useFormik({
 		initialValues: {
@@ -60,15 +61,13 @@ export const ConvertMoneyHomeComponent = () => {
 
 		// handleSaveTransferencia(parameter);
 
-		// if (user) {
-		// 	navigation.navigate({
-		// 		pathname: "/(home)/cuentas",
-		// 	});
-		// } else {
-		// 	navigation.navigate({
-		// 		pathname: "/register",
-		// 	});
-		// }
+		if (user) {
+			// navigation.navigate(
+			// 	 "/(home)/cuentas",
+			// );
+		} else {
+			navigation.navigate("register");
+		}
 	};
 
 	const loadData = useCallback(async () => {

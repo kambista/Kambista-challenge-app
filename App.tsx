@@ -14,6 +14,7 @@ import {
 	Montserrat_900Black,
 } from "@expo-google-fonts/montserrat";
 import { useEffect } from "react";
+import { AuthProvider } from "./src/context/auth.context";
 // import "react-native-reanimated";
 
 SplashScreen.preventAutoHideAsync();
@@ -41,17 +42,16 @@ export default function App() {
 	}
 
 	return (
-		// <View onLayout={}>
-		<NavigationContainer>
-			<Stack.Navigator
-				screenOptions={{ headerShown: false }}
-				initialRouteName="tabs"
-			>
-				<Stack.Screen name="register" component={RegisterPage} />
-				<Stack.Screen name="tabs" component={TabsLayout} />
-			</Stack.Navigator>
-		</NavigationContainer>
-
-		// </View>
+		<AuthProvider>
+			<NavigationContainer>
+				<Stack.Navigator
+					screenOptions={{ headerShown: false }}
+					initialRouteName="tabs"
+				>
+					<Stack.Screen name="register" component={RegisterPage} />
+					<Stack.Screen name="tabs" component={TabsLayout} />
+				</Stack.Navigator>
+			</NavigationContainer>
+		</AuthProvider>
 	);
 }
