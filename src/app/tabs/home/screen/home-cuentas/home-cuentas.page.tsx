@@ -14,11 +14,11 @@ export default function HomeCuentasPage() {
 
 	const handleChangeCuenta = (value: { id: number; name: string }) => {
 		console.log(value);
-		navigation.navigate("/payment-1");
+		navigation.navigate("home/payment-1");
 	};
 
 	const handleAddCuenta = () => {
-		navigation.navigate("/add-cuenta");
+		navigation.navigate("home/add-cuenta");
 	};
 
 	return (

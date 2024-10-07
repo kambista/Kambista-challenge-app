@@ -1,31 +1,26 @@
-import {
-	initialValuesPayment1Formik,
-	validateSchemaPayement1Formik,
-} from "@/shared/app/payment-1/formik/payment-1.formik";
-import {
-	ButtonComponent,
-	CardComponent,
-	HeaderComponent,
-} from "@/shared/components";
-import { SelectComponent } from "@/shared/components/form";
-import {
-	InfoComponent,
-	LineNavegacionComponent,
-} from "@/shared/components/general";
-import {
-	dataBancos,
-	dataCuentas,
-	dataFondos,
-} from "@/shared/contanst/data-home";
-import {
-	useAuthContext,
-	useTransferenciaContext,
-} from "@/shared/hooks/context.hook";
 import { Feather } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { useFormik } from "formik";
 import { ScrollView, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { HeaderComponent } from "../../../../../components/form/layout/header.component";
+import {
+	ButtonComponent,
+	CardComponent,
+	SelectComponent,
+} from "../../../../../components/form";
+import { InfoComponent } from "../../../../../components/form/general";
+import {
+	dataBancos,
+	dataCuentas,
+	dataFondos,
+} from "../../../../../constants/data/data-home";
+import { useTransferenciaContext } from "../../../../../hooks/context.hooks";
+import {
+	initialValuesPayment1Formik,
+	validateSchemaPayement1Formik,
+} from "./fomik/payment-1.formik";
+import { LineNavegacionComponent } from "../../components";
 
 export default function HomePayment1Page() {
 	const inset = useSafeAreaInsets();

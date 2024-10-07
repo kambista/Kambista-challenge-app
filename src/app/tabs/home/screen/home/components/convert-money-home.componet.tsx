@@ -12,7 +12,10 @@ import { DataResultCalculeProps } from "../interface/home.interface";
 import { dataTypeSale } from "../../../../../../constants/data/data-home";
 import { useNavigation } from "@react-navigation/native";
 import { homeService } from "../service/home.service";
-import { useAuthContext } from "../../../../../../hooks/context.hooks";
+import {
+	useAuthContext,
+	useTransferenciaContext,
+} from "../../../../../../hooks/context.hooks";
 
 export const ConvertMoneyHomeComponent = () => {
 	const navigation = useNavigation();
@@ -21,7 +24,7 @@ export const ConvertMoneyHomeComponent = () => {
 	const [dataResult, setDataResult] = useState<DataResultCalculeProps | null>(
 		null
 	);
-	// const { handleSaveTransferencia } = useTransferenciaContext();
+	const { handleSaveTransferencia } = useTransferenciaContext();
 	const { user } = useAuthContext();
 
 	const { values, setFieldValue, setValues } = useFormik({
@@ -55,7 +58,7 @@ export const ConvertMoneyHomeComponent = () => {
 			rate: dataResult?.rate || 0,
 		};
 
-		// handleSaveTransferencia(parameter);
+		handleSaveTransferencia(parameter);
 
 		if (user) {
 			navigation.navigate("home/cuentas");
