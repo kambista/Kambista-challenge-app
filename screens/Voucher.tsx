@@ -6,9 +6,12 @@ import InfoBox from "../components/InfoBox";
 import SubmitButton from "../components/SubmitButton";
 import { useNavigation } from "@react-navigation/native";
 import { TEXT_CONSTANTS } from "../util/constants";
+import { useStore } from "../store/store";
 
 export default function Voucher() {
   const nav = useNavigation();
+  const exchange = useStore((state: any) => state.exchange);
+  const isExchangeBid = useStore((state: any) => state.isExchangeBid);
   return (
     <KambistaBackground style="bg-white-background" step={3}>
       <WhiteContainer style="mt-7 p-6 border border-gray-200 pb-[51px]">
@@ -30,7 +33,9 @@ export default function Voucher() {
           texts={TEXT_CONSTANTS.WhereIsTheCode}
         />
         <Text className="font-montserrat-regular text-gray-input text-[15px]  mt-6">
-          Verificaremos tu operación para depositar S/343.00 a tu cuenta.
+          Verificaremos tu operación para depositar{" "}
+          {!isExchangeBid ? "$ " : "S/ "}
+          {exchange} a tu cuenta.
         </Text>
       </WhiteContainer>
       <Text className="font-montserrat-bold text-gray-input text-md self-center mt-3 text-center underline">

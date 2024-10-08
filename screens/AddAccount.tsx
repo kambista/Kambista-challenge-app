@@ -7,6 +7,7 @@ import SubmitButton from "../components/SubmitButton";
 import KambistaSelector from "../components/KambistaSelector";
 import { SELECTOR_ITEMS, TEXT_CONSTANTS } from "../util/constants";
 import { useNavigation } from "@react-navigation/native";
+import BoxBorder from "../components/BoxBorder";
 
 export default function AddAccount() {
   const infoText =
@@ -38,6 +39,23 @@ export default function AddAccount() {
           info={infoText}
           texts={TEXT_CONSTANTS.AvailabilityZone}
         />
+        <View className={`mb-6 h-[71px]`}>
+          <Text className="font-montserrat-bold text-md mb-2">Moneda</Text>
+          <View className="flex-row justify-between">
+            <BoxBorder
+              textStyle={"font-montserrat-bold text-[14px]"}
+              boxStyle={"bg-kambista-blue max-w-[45%] "}
+              title="Soles"
+            />
+            <BoxBorder
+              textStyle={"font-montserrat-bold text-[14px] text-kambista-blue"}
+              boxStyle={
+                "bg-white-component max-w-[45%] border border-gray-input-border"
+              }
+              title="Dólares"
+            />
+          </View>
+        </View>
         <KambistaInput
           title="Número de cuenta"
           placeholder="Escribe cuenta destino"

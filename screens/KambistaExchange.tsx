@@ -6,9 +6,12 @@ import SubmitButton from "../components/SubmitButton";
 import { useNavigation } from "@react-navigation/native";
 import { getTexts } from "../util/textFormatter";
 import { TEXT_CONSTANTS } from "../util/constants";
+import { useStore } from "../store/store";
 
 export default function KambistaExchange() {
   const nav = useNavigation();
+  const isExchangeBid = useStore((state: any) => state.isExchangeBid);
+  const amount = parseFloat(useStore((state: any) => state.amount));
   return (
     <KambistaBackground style="bg-white-background" step={2} backButtons>
       <ScrollView>
@@ -28,7 +31,10 @@ export default function KambistaExchange() {
           </Text>
           <WhiteContainer style="mt-3 border border-gray-400">
             <CustomText title="Destino" subTitle="Interbank" />
-            <CustomText title="Monto" subTitle="S/.1,000.00">
+            <CustomText
+              title="Monto"
+              subTitle={`${isExchangeBid ? "$" : "S/"} ${amount.toFixed(2)}`}
+            >
               <Image
                 className="w-[16px] h-[15px] ml-4"
                 source={require("../assets/Copycat.png")}

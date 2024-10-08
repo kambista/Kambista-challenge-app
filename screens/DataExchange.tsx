@@ -6,9 +6,15 @@ import SubmitButton from "../components/SubmitButton";
 import { useNavigation } from "@react-navigation/native";
 import KambistaSelector from "../components/KambistaSelector";
 import { SELECTOR_ITEMS, TEXT_CONSTANTS } from "../util/constants";
+import { useStore } from "../store/store";
 
 export default function DataExchange() {
   const nav = useNavigation();
+  const amount = parseFloat(useStore((state: any) => state.amount));
+  const exchange = parseFloat(useStore((state: any) => state.exchange));
+  const rate = useStore((state: any) => state.rate);
+  const isExchangeBid = useStore((state: any) => state.isExchangeBid);
+
   return (
     <KambistaBackground style="bg-white-background" step={1} backButtons>
       <ScrollView>
@@ -23,17 +29,23 @@ export default function DataExchange() {
             <Text className="font-montserrat-regular text-[16px] mb-2.5">
               Tú envías
             </Text>
-            <Text className="font-montserrat-bold text-[16px]">$100.00</Text>
+            <Text className="font-montserrat-bold text-[16px]">
+              {isExchangeBid ? "$ " : "S/ "}
+              {amount.toFixed(2)}
+            </Text>
           </View>
           <View className="flex-row justify-between border-b border-gray-300 ">
             <Text className="font-montserrat-regular text-[16px] mb-2.5 ">
               Tú recibes
             </Text>
-            <Text className="font-montserrat-bold text-[16px]">S/343.00</Text>
+            <Text className="font-montserrat-bold text-[16px]">
+              {isExchangeBid ? "S/ " : "$ "}
+              {exchange.toFixed(2)}
+            </Text>
           </View>
           <Text className="font-montserrat-bold text-[12px] mt-2.5">
             Tipo de cambio utilizado{" "}
-            {<Text className="text-red-600 line-through">3.422</Text>} 3.433
+            {<Text className="text-red-600 line-through">3.422</Text>} {rate}
           </Text>
         </WhiteContainer>
         <View className="pl-4 pr-4 mt-3">

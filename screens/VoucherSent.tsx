@@ -4,9 +4,12 @@ import WhiteContainer from "../components/WhiteContainer";
 import CustomText from "../components/CustomText";
 import SubmitButton from "../components/SubmitButton";
 import { useNavigation } from "@react-navigation/native";
+import { useStore } from "../store/store";
 
 export default function VoucherSent() {
   const nav = useNavigation();
+  const exchange = useStore((state: any) => state.exchange);
+  const isExchangeBid = useStore((state: any) => state.isExchangeBid);
   return (
     <KambistaBackground style="bg-white-background">
       <WhiteContainer style="pt-0 border border-gray-300">
@@ -22,7 +25,10 @@ export default function VoucherSent() {
           <Text className="font-montserrat-regular text-kambista-blue text-[14px] mb-2.5">
             *Usa tu código para dar seguimiento a tu operación.
           </Text>
-          <CustomText title="Monto a recibir" subTitle="S/ 343.00" />
+          <CustomText
+            title="Monto a recibir"
+            subTitle={`${!isExchangeBid ? "$" : "S/"} ${exchange}`}
+          />
           <CustomText title="Tiempo estimado de espera" subTitle="1 día útil" />
         </View>
       </WhiteContainer>
