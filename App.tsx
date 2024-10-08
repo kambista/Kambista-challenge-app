@@ -3,43 +3,38 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
 import { RegisterPage } from "./src/app/auth/register";
 import { TabsLayout } from "./src/app/tabs/tab-layout";
-import { useFonts } from "expo-font";
-import * as SplashScreen from "expo-splash-screen";
-import {
-	Montserrat_300Light,
-	Montserrat_400Regular,
-	Montserrat_500Medium,
-	Montserrat_600SemiBold,
-	Montserrat_700Bold,
-	Montserrat_900Black,
-} from "@expo-google-fonts/montserrat";
-import { useEffect } from "react";
-import { AuthProvider } from "./src/context/auth.context";
-// import "react-native-reanimated";
+// import { useFonts } from "expo-font";
+// import * as SplashScreen from "expo-splash-screen";
 
-SplashScreen.preventAutoHideAsync();
+// import { useEffect } from "react";
+import { AuthProvider } from "./src/context/auth.context";
+// import { ToastAndroid } from "react-native";
+
+// SplashScreen.preventAutoHideAsync();
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-	const [loaded] = useFonts({
-		Montserrat_300Light,
-		Montserrat_400Regular,
-		Montserrat_500Medium,
-		Montserrat_600SemiBold,
-		Montserrat_700Bold,
-		Montserrat_900Black,
-	});
+	// const [loaded, error] = useFonts({
+	// 	Montserrat_300Light: require("./assets/fonts/Montserrat-Light.ttf"),
+	// 	Montserrat_400Regular: require("./assets/fonts/Montserrat-Regular.ttf"),
+	// 	Montserrat_500Medium: require("./assets/fonts/Montserrat-Medium.ttf"),
+	// 	Montserrat_600SemiBold: require("./assets/fonts/Montserrat-SemiBold.ttf"),
+	// 	Montserrat_700Bold: require("./assets/fonts/Montserrat-Bold.ttf"),
+	// 	Montserrat_900Black: require("./assets/fonts/Montserrat-Black.ttf"),
+	// });
 
-	useEffect(() => {
-		if (loaded) {
-			SplashScreen.hideAsync();
-		}
-	}, [loaded]);
+	// useEffect(() => {
+	// 	if (loaded || error) {
+	// 		SplashScreen.hideAsync();
+	// 	}
+	// }, [loaded, error]);
 
-	if (!loaded) {
-		return null;
-	}
+	// if (!loaded && !error) {
+	// 	ToastAndroid.show(JSON.stringify(loaded), ToastAndroid.LONG);
+	// 	ToastAndroid.show(JSON.stringify(error), ToastAndroid.LONG);
+	// 	return null;
+	// }
 
 	return (
 		<AuthProvider>
