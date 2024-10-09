@@ -7,12 +7,13 @@ import SubmitButton from "../components/SubmitButton";
 import KambistaCheckBox from "../components/KambistaCheckBox";
 import KambistaSelector from "../components/KambistaSelector";
 import { SELECTOR_ITEMS, TEXT_CONSTANTS } from "../util/constants";
+import { useState } from "react";
 
 export default function Login() {
   const nav = useNavigation();
+  const [checkTerms, setCheckTerms] = useState(false);
+  const [checkPolicies, setCheckPolices] = useState(false);
 
-  const infoText =
-    "Tu documento de identidad debe coincidir con tus datos para evitar inconvenientes al momento de hacer una primera operación.";
   return (
     <KambistaBackground backButtons>
       <ScrollView>
@@ -38,7 +39,6 @@ export default function Login() {
             <KambistaInput numeric title="Número" placeholder="Número Doc" />
           </View>
           <InfoBox
-            info={infoText}
             style={"bg-blue-info mb-[23px]"}
             infoStyle={"text-blue-500"}
             texts={TEXT_CONSTANTS.DocumentWarning}
@@ -54,14 +54,22 @@ export default function Login() {
             placeholder="Selecciona"
             items={SELECTOR_ITEMS.otherExchangeCompanies}
           />
-          <KambistaCheckBox style="mt-6" texts={TEXT_CONSTANTS.TermsTexts} />
+          <KambistaCheckBox
+            style="mt-6"
+            texts={TEXT_CONSTANTS.TermsTexts}
+            checked={checkTerms}
+            onPress={() => setCheckTerms(!checkTerms)}
+          />
           <KambistaCheckBox
             texts={TEXT_CONSTANTS.PoliticsTexts}
             style="mb-[30px]"
+            checked={checkPolicies}
+            onPress={() => setCheckPolices(!checkPolicies)}
           />
           <SubmitButton
             onPress={() => nav.navigate("CurrencyExchange" as never)}
             text="CONTINUAR"
+            disabled={!checkTerms || !checkPolicies}
           />
           <Text className="mb-5">{""}</Text>
         </View>

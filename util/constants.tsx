@@ -59,16 +59,20 @@ export const SELECTOR_ITEMS = {
   ],
   foundSource: [
     {
-      label: "Hipoteca",
+      label: "HIPOTECA",
       value: "hipoteca",
     },
     {
-      label: "Crédito",
+      label: "CRÉDITO",
       value: "credito",
     },
     {
-      label: "Alquiler",
+      label: "ALQUILER",
       value: "alquiler",
+    },
+    {
+      label: "RENTA",
+      value: "renta",
     },
   ],
 };
@@ -151,3 +155,5 @@ export const TEXT_CONSTANTS = {
     },
   ],
 };
+
+export const API_URL = "https://api.kambista.com/v1/exchange/calculates";

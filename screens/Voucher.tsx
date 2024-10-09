@@ -7,11 +7,18 @@ import SubmitButton from "../components/SubmitButton";
 import { useNavigation } from "@react-navigation/native";
 import { TEXT_CONSTANTS } from "../util/constants";
 import { useStore } from "../store/store";
+import { useState } from "react";
 
 export default function Voucher() {
   const nav = useNavigation();
   const exchange = useStore((state: any) => state.exchange);
   const isExchangeBid = useStore((state: any) => state.isExchangeBid);
+  const [operationCode, setOperationCode] = useState();
+
+  function handleInputChange(value: any) {
+    setOperationCode(value);
+  }
+
   return (
     <KambistaBackground style="bg-white-background" step={3}>
       <WhiteContainer style="mt-7 p-6 border border-gray-200 pb-[51px]">
@@ -25,9 +32,8 @@ export default function Voucher() {
         <Text className="font-montserrat-regular text-[16px] mb-3 ">
           Escribe el código de operación del banco aquí
         </Text>
-        <KambistaInput numeric />
+        <KambistaInput numeric onChangeText={handleInputChange} />
         <InfoBox
-          info="¿Donde encuentro el código de operación?"
           style="p-0 items-center"
           infoStyle="text-[12px]"
           texts={TEXT_CONSTANTS.WhereIsTheCode}
@@ -45,6 +51,7 @@ export default function Voucher() {
         <SubmitButton
           text="ENVÍA TU CONSTANCIA"
           onPress={() => nav.navigate("VoucherSent" as never)}
+          disabled={!operationCode}
         />
       </View>
     </KambistaBackground>

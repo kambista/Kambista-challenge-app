@@ -2,7 +2,6 @@ import { Image, Text, View } from "react-native";
 import { getTexts } from "../util/textFormatter";
 
 interface InfoBoxProps {
-  info: string;
   style?: string;
   infoStyle?: string;
   texts?: any;

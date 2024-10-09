@@ -5,6 +5,7 @@ export default function KambistaInput({
   placeholder,
   numeric,
   containerStyle,
+  onChangeText,
 }: any) {
   return (
     <View className={`mb-6 min-w-[49%] ${containerStyle}`}>
@@ -16,6 +17,7 @@ export default function KambistaInput({
         placeholder={placeholder}
         className="text-md h-[46px] rounded-lg pl-4 pr-4 font-montserrat-regular text-kambista-blue border border-gray-input-border
         bg-white-component"
+        onChangeText={onChangeText}
       />
     </View>
   );

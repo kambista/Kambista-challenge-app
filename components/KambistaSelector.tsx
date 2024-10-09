@@ -16,7 +16,7 @@ export default function KambistaSelector({
           {title}
         </Text>
       )}
-      <View className="h-[46px] rounded-lg border border-gray-input-border bg-white-component ">
+      <View className="h-[46px] rounded-lg border border-gray-input-border bg-white-component">
         <RNPickerSelect
           placeholder={{
             label: placeholder,
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   inputIOS: {
     fontSize: 14,
     paddingVertical: 12,
-    paddingHorizontal: 10,
+    paddingHorizontal: 16,
     fontFamily: "Montserrat_400Regular",
   },
   inputAndroid: {
@@ -49,11 +49,11 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: 16,
     fontFamily: "Montserrat_400Regular",
-    color: "#686868",
+    color: "black",
     paddingRight: 10, // Para asegurar que el texto no se superponga con el icono de dropdown
   },
   placeholder: {
-    color: "gray", // Cambia el color del placeholder
+    color: "gray",
     fontSize: 14,
   },
 });

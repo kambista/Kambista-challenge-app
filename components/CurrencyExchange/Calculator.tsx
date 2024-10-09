@@ -1,4 +1,4 @@
-import { Image, Text, TouchableOpacity, View } from "react-native";
+import { Animated, Text, TouchableOpacity, View } from "react-native";
 import WhiteContainer from "../WhiteContainer";
 import BoxBorder from "../BoxBorder";
 import CurrencyBox from "./CurrencyBox";
@@ -6,109 +6,106 @@ import SubmitButton from "../SubmitButton";
 import { useNavigation } from "@react-navigation/native";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { useStore } from "../../store/store";
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { CalculatorApi } from "../../api/calculatorApi";
 
-const API_URL = "https://api.kambista.com/v1/exchange/calculates";
 export default function Calculator() {
   const nav = useNavigation();
-  const [exchangeRateData, setExchangeRateData] = useState(null);
+  const [exchangeRateData, setExchangeRateData]: any = useState(null);
   const amount = parseFloat(useStore((state: any) => state.amount));
   const exchange = parseFloat(useStore((state: any) => state.exchange));
   const rate = parseFloat(useStore((state: any) => state.rate));
+  const savingsRate = parseFloat(useStore((state: any) => state.savingsRate));
+  const isExchangeBid = useStore((state: any) => state.isExchangeBid);
   const updateAmount = useStore((state: any) => state.updateAmount);
   const updateExchange = useStore((state: any) => state.updateExchange);
   const updateRate = useStore((state: any) => state.updateRate);
-  const isExchangeBid = useStore((state: any) => state.isExchangeBid);
+  const updateSavingsRate = useStore((state: any) => state.updateSavingsRate);
   const updateIsExchangeBid = useStore(
     (state: any) => state.updateIsExchangeBid
   );
+  const [ableToContinue, setAbleToContinue] = useState(true);
+  const rotateAnim = useRef(new Animated.Value(0)).current;
 
-  const simulateExchangeRate = async (
-    originCurrency: string,
-    destinationCurrency: string,
-    amount: number
-  ) => {
-    try {
-      const response = await axios.get(API_URL, {
-        params: {
-          originCurrency,
-          destinationCurrency,
-          amount,
-          active: "S",
-        },
-      });
-
-      console.log("Response Data:", response.data);
-      return response.data;
-    } catch (error) {
-      console.error("Error fetching exchange rate:", error);
-    }
+  const startRotation = () => {
+    Animated.timing(rotateAnim, {
+      toValue: 1,
+      duration: 1000,
+      useNativeDriver: true,
+    }).start(() => {
+      rotateAnim.setValue(0);
+    });
   };
 
-  function updateRateExchange(data: any) {
-    const { exchange, rate, savings } = data;
-    //console.log("actualizando rate", amount, exchange, rate, savings);
-    updateRate(rate);
+  const rotateInterpolate = rotateAnim.interpolate({
+    inputRange: [0, 1],
+    outputRange: ["0deg", "360deg"],
+  });
+
+  const animatedStyle = {
+    transform: [{ rotate: rotateInterpolate }],
+  };
+  function changeCurrencyType() {
+    startRotation();
+    updateIsExchangeBid(!isExchangeBid);
   }
 
   const fetchExchangeRate = async () => {
-    const data = await simulateExchangeRate(
+    const data = await CalculatorApi.simulateExchangeRate(
       isExchangeBid ? "USD" : "PEN",
       isExchangeBid ? "PEN" : "USD",
       amount
-    ); // Cambia los valores según tus necesidades
-    await setExchangeRateData(data);
-    await updateRateExchange(data);
+    );
+    setExchangeRateData(data);
+    console.log("veamos data", data, rate);
+    updateRate(data.rate);
+    updateSavingsRate(data?.savings?.amount / amount);
   };
 
   useEffect(() => {
     const interval = setInterval(() => {
-      console.log("exbid", isExchangeBid);
       fetchExchangeRate();
-      // console.log(
-      //   "LLAMANDO CADA 10 sec, is exchangeBid",
-      //   amount,
-      //   isExchangeBid
-      // );
-    }, 8000); // Llamar a la API cada 5 segundos
-
+    }, 80000);
     return () => {
-      console.log("Limpiando el intervalo");
       clearInterval(interval);
     };
   }, [isExchangeBid]);
 
   useEffect(() => {
-    console.log(
-      "udpdateamos el bid, exchange",
-      isExchangeBid,
-      exchange,
-      rate,
-      exchangeRateData?.rate
-    );
     isExchangeBid
       ? updateExchange((amount * rate).toFixed(2))
       : updateExchange((amount / rate).toFixed(2));
-  }, [isExchangeBid, rate]);
+  }, [rate]);
 
   useEffect(() => {
-    //console.log("LLAMANDO AQUI  AL PI");
-    console.log("isExchangeBid inicial", isExchangeBid);
     fetchExchangeRate();
   }, [isExchangeBid]);
 
-  function changeCurrencyType() {
-    updateIsExchangeBid(!isExchangeBid);
-  }
   const handleInputChange = (value: any) => {
-    updateAmount(value);
-    updateExchange((value * rate).toFixed(2));
+    console.log("veamos value", value);
+    if (value === "" || value < 1) {
+      setAbleToContinue(false);
+      updateAmount(0);
+    } else {
+      setAbleToContinue(true);
+      updateAmount(value);
+    }
+    isExchangeBid
+      ? updateExchange((value * rate).toFixed(2))
+      : updateExchange((value / rate).toFixed(2));
   };
 
   const handleInputChangeInverse = (value: any) => {
-    updateAmount((value / rate).toFixed(2));
-    updateExchange(value);
+    if (value === "" || value < 1) {
+      setAbleToContinue(false);
+      updateExchange(0);
+    } else {
+      setAbleToContinue(true);
+      updateExchange(value);
+    }
+    isExchangeBid
+      ? updateAmount((value / rate).toFixed(2))
+      : updateAmount((value * rate).toFixed(2));
   };
 
   return (
@@ -122,6 +119,9 @@ export default function Calculator() {
             !isExchangeBid && "bg-white-component"
           } rounded-bl-none rounded-br-none`}
           title={`Compra: ${exchangeRateData?.tc?.bid}`}
+          onPress={() => {
+            !isExchangeBid && startRotation(), updateIsExchangeBid(true);
+          }}
         />
         <BoxBorder
           boxStyle={`bg-white-component ${
@@ -131,6 +131,10 @@ export default function Calculator() {
             !isExchangeBid && "text-white-component"
           } font-montserrat-bold text-[14px]`}
           title={`Venta: ${exchangeRateData?.tc?.ask}`}
+          onPress={() => {
+            isExchangeBid && startRotation();
+            updateIsExchangeBid(false);
+          }}
         />
       </View>
       <WhiteContainer style={"rounded-tr-none rounded-tl-none pt-8"}>
@@ -145,9 +149,12 @@ export default function Calculator() {
           className="bg-circle-gray p-4 self-center rounded-full absolute bottom-[120px] right-[25%] z-10"
           onPress={changeCurrencyType}
         >
-          <View className="bg-white-component p-2  self-center rounded-full">
+          <Animated.View
+            className="bg-white-component p-2  self-center rounded-full"
+            style={animatedStyle}
+          >
             <AntDesign name="sync" size={25} color="black" />
-          </View>
+          </Animated.View>
         </TouchableOpacity>
         <CurrencyBox
           title="Entonces recibes"
@@ -162,7 +169,7 @@ export default function Calculator() {
             </Text>
             <Text className="font-montserrat-semibold">{`${
               isExchangeBid ? "$" : "S/"
-            } ${exchangeRateData?.savings?.amount}`}</Text>
+            } ${(savingsRate * amount).toFixed(2)}`}</Text>
           </View>
           <View className="flex-end">
             <Text className="font-montserrat-regular mb-1">
@@ -177,6 +184,7 @@ export default function Calculator() {
       <SubmitButton
         style="p-4"
         text="INICIAR OPERACIÓN"
+        disabled={!ableToContinue}
         onPress={() => nav.navigate("DataExchange" as never)}
       />
     </View>

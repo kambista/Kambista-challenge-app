@@ -22,6 +22,7 @@ export default function CurrencyBox({
           keyboardType="decimal-pad"
           className="font-montserrat-bold text-kambista-blue text-[20px]"
           onChangeText={handleInputChange}
+          returnKeyType="done"
         >
           {type === "USD" ? amount : exchange}
         </TextInput>

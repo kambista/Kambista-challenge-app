@@ -14,6 +14,8 @@ export default function DataExchange() {
   const exchange = parseFloat(useStore((state: any) => state.exchange));
   const rate = useStore((state: any) => state.rate);
   const isExchangeBid = useStore((state: any) => state.isExchangeBid);
+  const localBidRate = useStore((state: any) => state.localBidRate);
+  const localAskRate = useStore((state: any) => state.localAskRate);
 
   return (
     <KambistaBackground style="bg-white-background" step={1} backButtons>
@@ -45,12 +47,16 @@ export default function DataExchange() {
           </View>
           <Text className="font-montserrat-bold text-[12px] mt-2.5">
             Tipo de cambio utilizado{" "}
-            {<Text className="text-red-600 line-through">3.422</Text>} {rate}
+            {
+              <Text className="text-red-600 line-through">
+                {isExchangeBid ? localBidRate : localAskRate}
+              </Text>
+            }{" "}
+            {rate}
           </Text>
         </WhiteContainer>
         <View className="pl-4 pr-4 mt-3">
           <InfoBox
-            info="Tiempo estimado de espera BCP, Interbank y BanBif: 15 min. (aplica para cualquier monto). Otros bancos 1 día útil."
             style="bg-blue-info mb-6"
             infoStyle="text-blue-900"
             texts={TEXT_CONSTANTS.EstimatedTime}
