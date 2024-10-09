@@ -35,7 +35,7 @@ export const HomeResumenPage = () => {
 							<Image source={require("@/assets/images/monedas-cerdito.png")} />
 						</View>
 
-						<Text className="font-monserrat700 text-text-700 text-xl leading-[24px] text-center">
+						<Text className="font-bold text-text-700 text-xl leading-[24px] text-center">
 							¡Constancia enviada!
 						</Text>
 
@@ -47,7 +47,7 @@ export const HomeResumenPage = () => {
 							classNameContainer="mb-2.5"
 						/>
 
-						<Text className="font-monserrat500 text-text-700 text-sm leading-[17px] mb-2.5">
+						<Text className="font-medium text-text-700 text-sm leading-[17px] mb-2.5">
 							*Usa tu código para dar seguimiento a tu operación.
 						</Text>
 
@@ -68,12 +68,12 @@ export const HomeResumenPage = () => {
 
 					<View className="items-center justify-center my-5 flex-row">
 						<IconStar />
-						<Text className="text-text-700 leading-[19px] text-base font-monserrat500 underline ml-3">
+						<Text className="text-text-700 leading-[19px] text-base font-medium underline ml-3">
 							Recomienda y gana
 						</Text>
 					</View>
 
-					<Text className="text-text-700 leading-[17px] text-sm font-monserrat400 text-center mb-4">
+					<Text className="text-text-700 leading-[17px] text-sm font-normal text-center mb-4">
 						Verificaremos tu operación. Puedes ver su estado en “Operaciones”.
 					</Text>
 
@@ -86,7 +86,7 @@ export const HomeResumenPage = () => {
 						onPress={() => navigation.navigate("home")}
 						className="mt-4"
 					>
-						<Text className="font-monserrat600 text-sm leading-[17px] underline text-center">
+						<Text className="font-semibold text-sm leading-[17px] underline text-center">
 							Volver al Inicio
 						</Text>
 					</Pressable>

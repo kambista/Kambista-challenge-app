@@ -33,7 +33,7 @@ export const SelectComponent = ({
 	return (
 		<View className={twMerge("w-full", classNameContainer)}>
 			{label ? (
-				<Text className="mb-2 text-sm text-gray-600 font-monserrat600 leading-[16px]">
+				<Text className="mb-2 text-sm text-gray-600 font-semibold leading-[16px]">
 					{label}
 				</Text>
 			) : null}
@@ -52,9 +52,7 @@ export const SelectComponent = ({
 			/>
 
 			{error && touched ? (
-				<Text className="text-red-700 text-xs font-monserrat400 mt-1">
-					{error}
-				</Text>
+				<Text className="text-red-700 text-xs font-normal mt-1">{error}</Text>
 			) : null}
 		</View>
 	);
@@ -84,17 +82,17 @@ const styles = StyleSheet.create({
 		color: "#060F26",
 		lineHeight: 14,
 		fontSize: 14,
-		fontFamily: "Montserrat_400Regular",
+		fontWeight: "400",
 	},
 	placeholderStyle: {
 		fontSize: 14,
 		color: "#A7A7A7",
-		fontFamily: "Montserrat_500Medium",
+		fontWeight: "500",
 	},
 	selectedTextStyle: {
 		color: "#060F26",
 		lineHeight: 14,
 		fontSize: 14,
-		fontFamily: "Montserrat_500Medium",
+		fontWeight: "500",
 	},
 });

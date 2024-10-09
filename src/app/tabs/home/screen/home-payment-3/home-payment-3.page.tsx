@@ -46,10 +46,10 @@ export const HomePayment3Page = () => {
 							<IconConstancia />
 						</View>
 
-						<Text className="text-center font-monserrat700 text-xl leading-[20px] text-text-700 mb-6">
+						<Text className="text-center font-bold text-xl leading-[20px] text-text-700 mb-6">
 							Envía tu constancia
 						</Text>
-						<Text className="font-monserrat400 text-base leading-[19px] text-text-700 mb-3">
+						<Text className="font-normal text-base leading-[19px] text-text-700 mb-3">
 							Escribe el código de operación del banco aquí
 						</Text>
 
@@ -62,19 +62,19 @@ export const HomePayment3Page = () => {
 
 						<View className="flex-row items-center mb-[26px]">
 							<FontAwesome name="question-circle-o" size={14} color="#060F26" />
-							<Text className="font-monserrat500 text-xs leading-[24px] ml-1">
+							<Text className="font-medium text-xs leading-[24px] ml-1">
 								¿Donde encuentro el código de operación?
 							</Text>
 						</View>
 
-						<Text className="font-monserrat500 text-xs text-gray-600 leading-[17px]">
+						<Text className="font-medium text-xs text-gray-600 leading-[17px]">
 							Verificaremos tu operación para depositar{" "}
 							{transferenciaMoney?.destiny.typeCurrency || ""}{" "}
 							{transferenciaMoney?.destiny.value || ""} a tu cuenta.
 						</Text>
 					</CardComponent>
 
-					<Text className="mt-[44px] mb-[38px] text-gray-600 leading-[17px] text-sm font-monserrat700 underline text-center">
+					<Text className="mt-[44px] mb-[38px] text-gray-600 leading-[17px] text-sm font-bold underline text-center">
 						Detalle de tu operación
 					</Text>
 

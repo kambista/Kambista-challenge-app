@@ -23,7 +23,7 @@ export const ItemTabsOperationComponent = ({
 		>
 			<Text
 				className={twMerge(
-					"font-monserrat700 text-sm leading-[17px]",
+					"font-bold text-sm leading-[17px]",
 					typeSale === item.id ? "text-white" : "text-[#66666680]"
 				)}
 			>

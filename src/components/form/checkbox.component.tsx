@@ -52,7 +52,7 @@ export const CheckboxComponent = ({
 				<Octicons name="check" size={20} color="white" />
 			</View>
 			{label ? (
-				<Text className="ml-3 text-xs font-monserrat300 leading-[15px] flex-1">
+				<Text className="ml-3 text-xs font-light leading-[15px] flex-1">
 					{label}
 				</Text>
 			) : (

@@ -25,7 +25,7 @@ export const TabsLayout = () => {
 					justifyContent: "center",
 				},
 				tabBarLabelStyle: {
-					fontFamily: "Montserrat_400Regular",
+					fontWeight: "400",
 					position: "relative",
 					top: -10,
 					fontSize: 10,

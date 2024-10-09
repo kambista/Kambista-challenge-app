@@ -11,7 +11,7 @@ interface Props {
 export const ToggleCurrencyComponent = ({ active, onChange }: Props) => {
 	return (
 		<View className="mb-6">
-			<Text className="mb-2 text-sm text-gray-600 font-monserrat600 leading-[16px]">
+			<Text className="mb-2 text-sm text-gray-600 font-semibold leading-[16px]">
 				Moneda
 			</Text>
 
@@ -27,7 +27,7 @@ export const ToggleCurrencyComponent = ({ active, onChange }: Props) => {
 					>
 						<Text
 							className={twMerge(
-								"font-monserrat500 text-sm leading-[14px]",
+								"font-medium text-sm leading-[14px]",
 								active === el.id ? "text-white" : "text-text-700"
 							)}
 						>

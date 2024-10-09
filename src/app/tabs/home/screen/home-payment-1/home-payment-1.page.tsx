@@ -54,33 +54,33 @@ export const HomePayment1Page = () => {
 
 				<View className="px-6 py-[34px] flex-1">
 					<View className="flex-row items-center justify-center mb-3">
-						<Text className="font-monserrat600 text-xs leading-[24px] mr-2 text-[#666666CC]">
+						<Text className="font-semibold text-xs leading-[24px] mr-2 text-[#666666CC]">
 							El tipo de cambio podría actualizarse en
 						</Text>
-						<Text className="font-monserrat900 text-[#666666CC] text-base leading-[19px]">
+						<Text className="font-black text-[#666666CC] text-base leading-[19px]">
 							00:00:00
 						</Text>
 					</View>
 
-					<Text className="font-monserrat700 text-text-700 text-xl leading-[24px] text-center mx-auto w-[83%] mb-7">
+					<Text className="font-bold text-text-700 text-xl leading-[24px] text-center mx-auto w-[83%] mb-7">
 						Completa los datos de tu operación
 					</Text>
 
 					<CardComponent classNameContainer="mb-4">
 						<View className="flex-row justify-between items-center mb-2.5">
-							<Text className="font-monserrat300 text-text-700 leading-[19px]">
+							<Text className="font-light text-text-700 leading-[19px]">
 								Tú envías
 							</Text>
-							<Text className="font-monserrat700 text-text-900 leading-[19px]">
+							<Text className="font-bold text-text-900 leading-[19px]">
 								{transferenciaMoney?.origen.typeCurrency}{" "}
 								{transferenciaMoney?.origen.value}
 							</Text>
 						</View>
 						<View className="flex-row justify-between items-center">
-							<Text className="font-monserrat300 text-text-700 leading-[19px]">
+							<Text className="font-light text-text-700 leading-[19px]">
 								Tú recibes
 							</Text>
-							<Text className="font-monserrat700 text-text-900 leading-[19px]">
+							<Text className="font-bold text-text-900 leading-[19px]">
 								{transferenciaMoney?.destiny.typeCurrency || ""}{" "}
 								{transferenciaMoney?.destiny.value || ""}
 							</Text>
@@ -88,7 +88,7 @@ export const HomePayment1Page = () => {
 
 						<View className="h-[1px] w-full bg-[#CCCCCC] my-2.5" />
 
-						<Text className="font-monserrat700 text-text-700 leading-[14px] text-xs">
+						<Text className="font-bold text-text-700 leading-[14px] text-xs">
 							Tipo de cambio utilizado{" "}
 							<Text className="text-red-700 line-through">3.422</Text>{" "}
 							{transferenciaMoney?.rate || ""}
@@ -98,15 +98,13 @@ export const HomePayment1Page = () => {
 					<InfoComponent classNameContainer="flex-row items-start mb-4">
 						<Feather name="info" size={20} color="#082774" />
 
-						<Text className="ml-3 text-xs text-third-700 font-monserrat500 leading-[14px] flex-1">
+						<Text className="ml-3 text-xs text-third-700 font-medium leading-[14px] flex-1">
 							Tiempo estimado de espera{" "}
-							<Text className="font-monserrat700">
+							<Text className="font-bold">
 								BCP, Interbank y BanBif: 15 min.
 							</Text>{" "}
 							(aplica para cualquier monto).{" "}
-							<Text className="font-monserrat700">
-								Otros bancos 1 día útil.
-							</Text>
+							<Text className="font-bold">Otros bancos 1 día útil.</Text>
 						</Text>
 					</InfoComponent>
 

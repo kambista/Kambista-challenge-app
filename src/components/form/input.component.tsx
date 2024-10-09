@@ -33,21 +33,19 @@ export const InputComponent = ({
 }: Props) => {
 	return (
 		<View className={twMerge("w-full", classNameContainer)}>
-			<Text className="mb-2 text-sm text-gray-600 font-monserrat600 leading-[16px]">
+			<Text className="mb-2 text-sm text-gray-600 font-semibold leading-[16px]">
 				{label}
 			</Text>
 
 			<TextInput
 				keyboardType={keyboardType}
 				placeholderTextColor={"#A7A7A7"}
-				className="h-[46px] px-4 border border-gray-300 rounded-[10px] text-text text-sm font-monserrat500 w-full bg-white"
+				className="h-[46px] px-4 border border-gray-300 rounded-[10px] text-text text-sm font-medium w-full bg-white"
 				{...props}
 			/>
 
 			{error && touched ? (
-				<Text className="text-red-700 text-xs font-monserrat400 mt-1">
-					{error}
-				</Text>
+				<Text className="text-red-700 text-xs font-normal mt-1">{error}</Text>
 			) : null}
 		</View>
 	);

@@ -105,7 +105,7 @@ export const FormRegisterComponent = () => {
 
 			<InfoComponent classNameContainer="flex-row items-start my-6">
 				<Octicons name="question" size={20} color="#082774" />
-				<Text className="ml-3 text-xs text-[#456DD3CC] font-monserrat400 leading-[14px] flex-1">
+				<Text className="ml-3 text-xs text-[#456DD3CC] font-normal leading-[14px] flex-1">
 					Tu documento de identidad debe coincidir con tus datos para evitar
 					incovenientes al momento de hacer una primera operación.
 				</Text>
@@ -141,9 +141,9 @@ export const FormRegisterComponent = () => {
 					onPress={(state) => setFieldValue("terminos", state)}
 					value={values.terminos}
 					labelRender={
-						<Text className="ml-3 text-xs font-monserrat300 leading-[15px]">
+						<Text className="ml-3 text-xs font-light leading-[15px]">
 							He leído y acepto los{" "}
-							<Text className="font-monserrat600 underline">
+							<Text className="font-semibold underline">
 								Términos y condiciones
 							</Text>
 						</Text>
@@ -154,9 +154,9 @@ export const FormRegisterComponent = () => {
 					onPress={(state) => setFieldValue("politica", state)}
 					value={values.politica}
 					labelRender={
-						<Text className="ml-3 text-xs font-monserrat300 leading-[15px] flex-1">
+						<Text className="ml-3 text-xs font-light leading-[15px] flex-1">
 							Acepto de manera expresa e informada la{" "}
-							<Text className="font-monserrat600 underline">
+							<Text className="font-semibold underline">
 								Política de Tratamiento de Datos personales de Kambista
 							</Text>
 						</Text>

@@ -7,7 +7,7 @@ export const HeaderHomeComponent = () => {
 			<IconNotificaciones />
 			<View className="flex-row items-center">
 				<View className="w-[30px] h-[30px] bg-text-700" />
-				<Text className="font-monserrat700 ml-3 text-xl">Kambista</Text>
+				<Text className="font-bold ml-3 text-xl">Kambista</Text>
 			</View>
 			<View />
 		</View>

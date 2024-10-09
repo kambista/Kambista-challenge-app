@@ -27,11 +27,11 @@ export const ItemMoneyComponent = ({
 			className={twMerge("rounded-lg h-[70px] flex-row", classNameContainer)}
 		>
 			<View className="rounded-l-lg bg-[#E0E0E0] flex-1 py-2.5 px-5">
-				<Text className="font-monserrat400 text-sm text-text-700 leading-[17px] mb-2">
+				<Text className="font-normal text-sm text-text-700 leading-[17px] mb-2">
 					{title}
 				</Text>
 				<TextInput
-					className="font-monserrat700 text-xl leading-[20px]"
+					className="font-bold text-xl leading-[20px]"
 					value={value}
 					keyboardType="numeric"
 					readOnly={readOnly}
@@ -39,9 +39,7 @@ export const ItemMoneyComponent = ({
 				/>
 			</View>
 			<View className="rounded-r-lg bg-text-700 w-[112px] items-center justify-center py-2.5 px-5">
-				<Text className="font-monserrat700 text-base text-white">
-					{nameCurrency}
-				</Text>
+				<Text className="font-bold text-base text-white">{nameCurrency}</Text>
 			</View>
 		</View>
 	);

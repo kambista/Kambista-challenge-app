@@ -23,11 +23,9 @@ export const TextCopyComponent = ({
 
 	return (
 		<View className={twMerge(classNameContainer)}>
-			<Text className="font-monserrat700 text-gray-600 text-xs mb-1">
-				{title}
-			</Text>
+			<Text className="font-bold text-gray-600 text-xs mb-1">{title}</Text>
 			<View className="flex-row items-center">
-				<Text className="font-monserrat700 text-text-700 text-xs">{text}</Text>
+				<Text className="font-bold text-text-700 text-xs">{text}</Text>
 				{isCopy ? (
 					<Pressable className="ml-4" onPress={handleCopy}>
 						<FontAwesome6 name="copy" size={16} color="#4F4F4F" />
