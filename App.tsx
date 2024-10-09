@@ -9,7 +9,6 @@ import * as SplashScreen from "expo-splash-screen";
 
 import { useEffect } from "react";
 import { AuthProvider } from "./src/context/auth.context";
-// import { ToastAndroid } from "react-native";
 
 import {
 	Montserrat_300Light,
@@ -20,7 +19,7 @@ import {
 	Montserrat_900Black,
 } from "@expo-google-fonts/montserrat";
 
-// SplashScreen.preventAutoHideAsync();
+SplashScreen.preventAutoHideAsync();
 
 const Stack = createNativeStackNavigator();
 
@@ -34,11 +33,11 @@ export default function App() {
 		Montserrat_900Black,
 	});
 
-	// useEffect(() => {
-	// 	if (loaded) {
-	// 		SplashScreen.hideAsync();
-	// 	}
-	// }, [loaded]);
+	useEffect(() => {
+		if (loaded) {
+			SplashScreen.hideAsync();
+		}
+	}, [loaded]);
 
 	if (!loaded) {
 		return null;
