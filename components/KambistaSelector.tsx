@@ -38,11 +38,7 @@ export default function KambistaSelector({
             </View>
           )}
           onValueChange={
-            onValueChange
-              ? (value) => onValueChange(value)
-              : (value) => {
-                  console.log(value);
-                }
+            onValueChange ? (value) => onValueChange(value) : () => null
           }
           style={styles}
           items={items}

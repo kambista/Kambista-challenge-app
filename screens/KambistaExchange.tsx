@@ -14,7 +14,6 @@ export default function KambistaExchange() {
   const isExchangeBid = useStore((state: any) => state.isExchangeBid);
   const amount = parseFloat(useStore((state: any) => state.amount));
   const destinationBank = useStore((state: any) => state.destinationBank);
-  console.log("destinationBank", destinationBank);
   return (
     <KambistaBackground style="bg-white-background" step={2} backButtons>
       <ScrollView>

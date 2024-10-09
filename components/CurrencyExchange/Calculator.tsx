@@ -57,19 +57,9 @@ export default function Calculator() {
       amount
     );
     setExchangeRateData(data);
-    console.log("veamos data", data, rate);
     updateRate(data.rate);
     updateSavingsRate(data?.savings?.amount / amount);
   };
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      fetchExchangeRate();
-    }, 80000);
-    return () => {
-      clearInterval(interval);
-    };
-  }, [isExchangeBid]);
 
   useEffect(() => {
     isExchangeBid
@@ -82,7 +72,6 @@ export default function Calculator() {
   }, [isExchangeBid]);
 
   const handleInputChange = (value: any) => {
-    console.log("veamos value", value);
     if (value === "" || value < 1) {
       setAbleToContinue(false);
       updateAmount(0);

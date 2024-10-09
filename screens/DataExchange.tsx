@@ -24,7 +24,6 @@ export default function DataExchange() {
   );
 
   function updateDestinationBankHandler(newDestinationBank: any) {
-    console.log("newDestinationBank", newDestinationBank);
     updateDestinationBank(newDestinationBank);
   }
 

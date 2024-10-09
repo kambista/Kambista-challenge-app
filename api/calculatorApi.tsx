@@ -1,5 +1,6 @@
 import axios from "axios";
 import { API_URL } from "../util/constants";
+import { Alert } from "react-native";
 
 export class CalculatorApi {
   static async simulateExchangeRate(
@@ -16,11 +17,9 @@ export class CalculatorApi {
           active: "S",
         },
       });
-
-      console.log("Response Data:", response.data);
       return response.data;
-    } catch (error) {
-      console.error("Error fetching exchange rate:", error);
+    } catch (error: any) {
+      Alert.alert("Error", error.message);
     }
   }
 }
