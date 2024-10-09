@@ -1,0 +1,35 @@
+{
+	"expo": {
+		"name": "prueba-kambista",
+		"slug": "prueba-kambista",
+		"version": "1.0.1",
+		"orientation": "portrait",
+		"icon": "./assets/icon.png",
+		"userInterfaceStyle": "light",
+		"splash": {
+			"image": "./assets/splash.png",
+			"resizeMode": "contain",
+			"backgroundColor": "#ffffff"
+		},
+		"ios": {
+			"supportsTablet": true
+		},
+
+		"android": {
+			"adaptiveIcon": {
+				"foregroundImage": "./assets/adaptive-icon.png",
+				"backgroundColor": "#ffffff"
+			},
+			"package": "com.jose1997ureta.pruebakambista"
+		},
+		"web": {
+			"favicon": "./assets/favicon.png"
+		},
+		"extra": {
+			"eas": {
+				"projectId": "4e746234-f47b-459b-a72b-b3b35ba81458"
+			}
+		},
+		"plugins": ["expo-font"]
+	}
+}
