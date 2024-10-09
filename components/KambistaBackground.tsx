@@ -13,12 +13,20 @@ function getStepper(step: number) {
   }
 }
 
+interface KambistaBackgroundProps {
+  children: any;
+  style?: string;
+  step?: number;
+  backButtons?: boolean;
+  onBackPressed?: any;
+}
 export default function KambistaBackground({
   children,
   style,
   step,
   backButtons,
-}: any) {
+  onBackPressed,
+}: KambistaBackgroundProps) {
   const nav = useNavigation();
   return (
     <ImageBackground
@@ -33,7 +41,10 @@ export default function KambistaBackground({
               name="left"
               size={28}
               color="white"
-              onPress={() => nav.goBack()}
+              onPress={() => {
+                onBackPressed && onBackPressed();
+                nav.goBack();
+              }}
             />
             <AntDesign
               name="close"

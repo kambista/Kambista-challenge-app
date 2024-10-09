@@ -10,12 +10,17 @@ import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
 import ScreenTitle from "../components/ScreenTitle";
 import AccountCurrencyType from "../components/Accounts/AccountCurrencyType";
+import { useStore } from "../store/store";
 
 export default function AddAccount() {
   const nav = useNavigation();
   const [checkState, setCheckState] = useState(false);
+  const updateActiveMenu = useStore((state: any) => state.updateActiveMenu);
   return (
-    <KambistaBackground backButtons>
+    <KambistaBackground
+      backButtons
+      onBackPressed={() => updateActiveMenu("Accounts")}
+    >
       <ScrollView className="flex-1">
         <ScreenTitle title="Agregar Cuenta" textStyle={"mb-6"} />
         <KambistaSelector

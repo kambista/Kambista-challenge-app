@@ -1,6 +1,10 @@
 import { Text } from "react-native";
 
-export default function ScreenTitle({ title, textStyle }: any) {
+interface ScreenTitleProps {
+  title: string;
+  textStyle?: string;
+}
+export default function ScreenTitle({ title, textStyle }: ScreenTitleProps) {
   return (
     <Text
       className={`font-montserrat-bold text-2xl self-center text-center ${textStyle}`}

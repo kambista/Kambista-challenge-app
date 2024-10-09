@@ -1,12 +1,18 @@
 import { Text, TextInput, View } from "react-native";
 import { useStore } from "../../store/store";
 
+interface CurrencyBoxProps {
+  title: string;
+  currency: string;
+  handleInputChange: any;
+  type?: string;
+}
 export default function CurrencyBox({
   title,
   currency,
   handleInputChange,
   type,
-}: any) {
+}: CurrencyBoxProps) {
   const amount = parseFloat(useStore((state: any) => state.amount));
   const exchange = parseFloat(useStore((state: any) => state.exchange));
 

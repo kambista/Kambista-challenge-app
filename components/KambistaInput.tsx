@@ -1,5 +1,14 @@
 import { Text, TextInput, View } from "react-native";
 
+type KambistaInputProps = {
+  title?: string;
+  placeholder?: string;
+  numeric?: any;
+  containerStyle?: string;
+  textStyle?: string;
+  inputStyle?: string;
+  onChangeText?: any;
+};
 export default function KambistaInput({
   title,
   placeholder,
@@ -8,7 +17,7 @@ export default function KambistaInput({
   onChangeText,
   textStyle,
   inputStyle,
-}: any) {
+}: KambistaInputProps) {
   return (
     <View className={`mb-6 min-w-[49%] ${containerStyle}`}>
       {title && (

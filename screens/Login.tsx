@@ -15,7 +15,7 @@ export default function Login() {
   const [checkPolicies, setCheckPolices] = useState(false);
 
   return (
-    <KambistaBackground backButtons>
+    <KambistaBackground>
       <ScrollView>
         <Text className="font-montserrat-bold text-2xl self-center mb-6">
           ¡Empecemos!

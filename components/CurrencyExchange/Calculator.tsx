@@ -13,7 +13,6 @@ export default function Calculator() {
   const nav = useNavigation();
   const [exchangeRateData, setExchangeRateData]: any = useState(null);
   const amount = parseFloat(useStore((state: any) => state.amount));
-  const exchange = parseFloat(useStore((state: any) => state.exchange));
   const rate = parseFloat(useStore((state: any) => state.rate));
   const savingsRate = parseFloat(useStore((state: any) => state.savingsRate));
   const isExchangeBid = useStore((state: any) => state.isExchangeBid);
@@ -130,7 +129,6 @@ export default function Calculator() {
         <CurrencyBox
           title="¿Cuánto envías"
           currency={isExchangeBid ? "Dólares" : "Soles"}
-          value={amount}
           handleInputChange={handleInputChange}
           type={"USD"}
         />
@@ -148,7 +146,6 @@ export default function Calculator() {
         <CurrencyBox
           title="Entonces recibes"
           currency={isExchangeBid ? "Soles" : "Dólares"}
-          value={exchange}
           handleInputChange={handleInputChangeInverse}
         />
         <View className="flex-row justify-between pr-1 mt-2">

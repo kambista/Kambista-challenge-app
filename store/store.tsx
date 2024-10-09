@@ -1,7 +1,6 @@
 import { create } from "zustand";
 
 export const useStore = create((set) => ({
-  bears: 0,
   amount: 1000.0,
   rate: 0,
   exchange: 0,
@@ -10,6 +9,8 @@ export const useStore = create((set) => ({
   localBidRate: 3.713,
   localAskRate: 3.833,
   destinationBank: "",
+  activeMenu: "CurrencyExchange",
+  updateActiveMenu: (newActiveMenu: any) => set({ activeMenu: newActiveMenu }),
   updateDestinationBank: (newDestinationBank: any) =>
     set({ destinationBank: newDestinationBank }),
   updateSavingsRate: (newSavings: any) => set({ savingsRate: newSavings }),

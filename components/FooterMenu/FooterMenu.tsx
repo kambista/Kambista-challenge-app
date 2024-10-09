@@ -1,15 +1,22 @@
 import { View } from "react-native";
 import FooterMenuItem from "./FooterMenuItem";
 import { useNavigation } from "@react-navigation/native";
+import { useStore } from "../../store/store";
 
 export default function FooterMenu() {
   const nav = useNavigation();
+  const updateActiveMenu = useStore((state: any) => state.updateActiveMenu);
+  function setMenu(menuName: string) {
+    updateActiveMenu(menuName);
+    nav.navigate(menuName as never);
+  }
   return (
     <View className="flex flex-row bg-white-component p-3 border-t border-gray-300">
       <FooterMenuItem
         source={require("../../assets/Exchange.png")}
         title="Inicio"
-        onPress={() => nav.navigate("CurrencyExchange" as never)}
+        screenName="CurrencyExchange"
+        onPress={() => setMenu("CurrencyExchange")}
       />
       <FooterMenuItem
         source={require("../../assets/Task.png")}
@@ -19,7 +26,8 @@ export default function FooterMenu() {
         style="w-7"
         source={require("../../assets/Card.png")}
         title="Cuentas"
-        onPress={() => nav.navigate("Accounts" as never)}
+        screenName="Accounts"
+        onPress={() => setMenu("Accounts")}
       />
       <FooterMenuItem
         source={require("../../assets/Bell.png")}

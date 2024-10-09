@@ -1,7 +1,16 @@
 import { View } from "react-native";
 import { Text } from "react-native";
 
-export default function CustomText({ children, title, subTitle }: any) {
+interface CustomTextProps {
+  children?: any;
+  title: string;
+  subTitle: string;
+}
+export default function CustomText({
+  children,
+  title,
+  subTitle,
+}: CustomTextProps) {
   return (
     <View>
       <Text className="font-montserrat-semibold text-gray-input text-[12px] mb-1">

@@ -1,16 +1,17 @@
 import { Text, TouchableOpacity, View } from "react-native";
 
+interface SubmitButtonProps {
+  text: string;
+  style?: string;
+  onPress?: () => void;
+  disabled?: boolean;
+}
 export default function SubmitButton({
   text,
   style,
   onPress,
   disabled,
-}: {
-  text: string;
-  style?: string;
-  onPress?: () => void;
-  disabled?: boolean;
-}) {
+}: SubmitButtonProps) {
   return (
     <View className={`flex-1 ${style}`}>
       <TouchableOpacity
