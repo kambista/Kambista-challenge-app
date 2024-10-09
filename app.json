@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "Kambista",
+    "slug": "Kambista-challenge-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/kambista.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/kambista.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "softwareKeyboardLayoutMode": "pan",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/kambista.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.alextid97.Kambistachallengeapp"
+    },
+    "web": {
+      "favicon": "./assets/kambista.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "3a650657-3495-44f7-bceb-1f1c04cb5931"
+      }
+    },
+    "plugins": [
+      "expo-font"
+    ]
+  }
+}
