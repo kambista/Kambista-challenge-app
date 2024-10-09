@@ -82,7 +82,7 @@ export const HomeAddCuentaPage = () => {
 					<InfoComponent classNameContainer="flex-row items-start my-6">
 						<Feather name="info" size={20} color="#082774" />
 
-						<Text className="ml-3 text-xs text-third-700 font-medium leading-[14px] flex-1">
+						<Text className="ml-3 text-xs text-third-700 font-monserrat500 leading-[14px] flex-1">
 							Operamos en Lima con todos los bancos. Y en provincia con el BCP y
 							cuentas digitales Interbank.
 						</Text>

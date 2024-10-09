@@ -10,7 +10,7 @@ export const TitleComponent = ({ text, classNameContainer }: Props) => {
 	return (
 		<Text
 			className={twMerge(
-				"text-center font-bold text-2xl text-text-700",
+				"text-center font-monserrat700 text-2xl text-text-700",
 				classNameContainer
 			)}
 		>

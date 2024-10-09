@@ -1,40 +1,48 @@
+import "react-native-gesture-handler";
 import { StatusBar } from "expo-status-bar";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
 import { RegisterPage } from "./src/app/auth/register";
 import { TabsLayout } from "./src/app/tabs/tab-layout";
-// import { useFonts } from "expo-font";
-// import * as SplashScreen from "expo-splash-screen";
+import { useFonts } from "expo-font";
+import * as SplashScreen from "expo-splash-screen";
 
-// import { useEffect } from "react";
+import { useEffect } from "react";
 import { AuthProvider } from "./src/context/auth.context";
 // import { ToastAndroid } from "react-native";
+
+import {
+	Montserrat_300Light,
+	Montserrat_400Regular,
+	Montserrat_500Medium,
+	Montserrat_600SemiBold,
+	Montserrat_700Bold,
+	Montserrat_900Black,
+} from "@expo-google-fonts/montserrat";
 
 // SplashScreen.preventAutoHideAsync();
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-	// const [loaded, error] = useFonts({
-	// 	Montserrat_300Light: require("./assets/fonts/Montserrat-Light.ttf"),
-	// 	Montserrat_400Regular: require("./assets/fonts/Montserrat-Regular.ttf"),
-	// 	Montserrat_500Medium: require("./assets/fonts/Montserrat-Medium.ttf"),
-	// 	Montserrat_600SemiBold: require("./assets/fonts/Montserrat-SemiBold.ttf"),
-	// 	Montserrat_700Bold: require("./assets/fonts/Montserrat-Bold.ttf"),
-	// 	Montserrat_900Black: require("./assets/fonts/Montserrat-Black.ttf"),
-	// });
+	const [loaded] = useFonts({
+		Montserrat_300Light,
+		Montserrat_400Regular,
+		Montserrat_500Medium,
+		Montserrat_600SemiBold,
+		Montserrat_700Bold,
+		Montserrat_900Black,
+	});
 
 	// useEffect(() => {
-	// 	if (loaded || error) {
+	// 	if (loaded) {
 	// 		SplashScreen.hideAsync();
 	// 	}
-	// }, [loaded, error]);
+	// }, [loaded]);
 
-	// if (!loaded && !error) {
-	// 	ToastAndroid.show(JSON.stringify(loaded), ToastAndroid.LONG);
-	// 	ToastAndroid.show(JSON.stringify(error), ToastAndroid.LONG);
-	// 	return null;
-	// }
+	if (!loaded) {
+		return null;
+	}
 
 	return (
 		<AuthProvider>

@@ -32,7 +32,7 @@ export const ButtonComponent = ({
 			disabled={disabled}
 		>
 			{
-				<Text className="text-text-700 text-sm font-semibold leading-[17px] uppercase">
+				<Text className="text-text-700 text-sm font-monserrat600 leading-[17px] uppercase">
 					{loading ? "Cargando ..." : name}
 				</Text>
 			}

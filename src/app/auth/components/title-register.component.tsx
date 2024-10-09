@@ -6,7 +6,7 @@ export const FormTitleComponent = () => {
 		<View className="px-[33px] pt-[34] pb-[38px]">
 			<TitleComponent text="¡Empecemos!" classNameContainer="mb-6" />
 
-			<Text className="text-center text-base font-light text-black leading-[16px]">
+			<Text className="text-center text-base font-monserrat300 text-black leading-[16px]">
 				Completa tus datos como figuran en tu DNI
 			</Text>
 		</View>

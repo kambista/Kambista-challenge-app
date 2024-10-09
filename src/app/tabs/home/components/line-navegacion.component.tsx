@@ -62,7 +62,7 @@ export const LineNavegacionComponent = () => {
 						/>
 						<Text
 							className={twMerge(
-								"font-bold text-[10px] leading-[12px]",
+								"font-monserrat700 text-[10px] leading-[12px]",
 								active >= el.id ? "text-text-700" : "text-[#666666]"
 							)}
 						>

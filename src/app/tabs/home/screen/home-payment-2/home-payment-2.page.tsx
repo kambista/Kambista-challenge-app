@@ -36,10 +36,10 @@ export const HomePayment2Page = () => {
 
 				<View className="px-6 py-[34px] flex-1">
 					<View className="flex-row items-center mb-3">
-						<Text className="font-semibold text-xs leading-[24px] mr-2 text-[#666666CC]">
+						<Text className="font-monserrat600 text-xs leading-[24px] mr-2 text-[#666666CC]">
 							El tipo de cambio podría actualizarse en
 						</Text>
-						<Text className="font-black text-[#666666CC] text-base leading-[19px]">
+						<Text className="font-monserrat900 text-[#666666CC] text-base leading-[19px]">
 							13:15
 						</Text>
 					</View>
@@ -49,13 +49,13 @@ export const HomePayment2Page = () => {
 							<IconTransferencia />
 						</View>
 
-						<Text className="text-center font-bold text-xl leading-[20px] text-text-700 mb-3">
+						<Text className="text-center font-monserrat700 text-xl leading-[20px] text-text-700 mb-3">
 							Transfiere a kambista{" "}
 						</Text>
 
-						<Text className="font-light leading-[19px] text-base text-text-700 mb-3">
+						<Text className="font-monserrat300 leading-[19px] text-base text-text-700 mb-3">
 							Transfiere desde tu app bancaria y guarda el{" "}
-							<Text className="underline font-medium">
+							<Text className="underline font-monserrat500">
 								número o código de operación
 							</Text>{" "}
 							para el siguiente paso.
@@ -100,7 +100,7 @@ export const HomePayment2Page = () => {
 						</View>
 					</CardComponent>
 
-					<Text className="text-[#666666] text-sm font-bold text-center leading-[17px] underline mb-[26px]">
+					<Text className="text-[#666666] text-sm font-monserrat700 text-center leading-[17px] underline mb-[26px]">
 						Detalle de tu operación
 					</Text>
 					<ButtonComponent
