@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Kambista",
-    "slug": "Kambista",
+    "slug": "Kambista-challenge-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/kambista.png",
