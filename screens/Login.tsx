@@ -40,7 +40,7 @@ export default function Login() {
           </View>
           <InfoBox
             style={"bg-blue-info mb-[23px]"}
-            infoStyle={"text-blue-500"}
+            infoStyle={"text-blue-800"}
             texts={TEXT_CONSTANTS.DocumentWarning}
           />
           <KambistaInput

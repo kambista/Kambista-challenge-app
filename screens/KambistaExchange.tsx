@@ -7,17 +7,18 @@ import { useNavigation } from "@react-navigation/native";
 import { getTexts } from "../util/textFormatter";
 import { TEXT_CONSTANTS } from "../util/constants";
 import { useStore } from "../store/store";
+import TimeToChange from "../components/DataExchange.tsx/TimeToChange";
 
 export default function KambistaExchange() {
   const nav = useNavigation();
   const isExchangeBid = useStore((state: any) => state.isExchangeBid);
   const amount = parseFloat(useStore((state: any) => state.amount));
+  const destinationBank = useStore((state: any) => state.destinationBank);
+  console.log("destinationBank", destinationBank);
   return (
     <KambistaBackground style="bg-white-background" step={2} backButtons>
       <ScrollView>
-        <Text className="font-montserrat-regular text-md self-center text-gray-input mt-5">
-          El tipo de cambio podría actualizar en 00:00:00
-        </Text>
+        <TimeToChange time={"13:10"} />
         <WhiteContainer style="mt-[14px]" outerStyle="pl-5 pr-5">
           <Image
             className="self-center w-[55px] h-[55px]"
@@ -29,8 +30,15 @@ export default function KambistaExchange() {
           <Text className="font-montserrat-regular text-[16px] self-center">
             {getTexts(TEXT_CONSTANTS.ExchangeSuggestion)}
           </Text>
-          <WhiteContainer style="mt-3 border border-gray-400">
-            <CustomText title="Destino" subTitle="Interbank" />
+          <WhiteContainer style="mt-3 border border-gray-400 pb-2">
+            <CustomText
+              title="Destino"
+              subTitle={
+                destinationBank === "null" || destinationBank === ""
+                  ? "Interbank"
+                  : destinationBank.toUpperCase()
+              }
+            />
             <CustomText
               title="Monto"
               subTitle={`${isExchangeBid ? "$" : "S/"} ${amount.toFixed(2)}`}
@@ -59,9 +67,9 @@ export default function KambistaExchange() {
         <Text className="font-montserrat-bold text-gray-input text-md self-center mt-3 text-center underline">
           Detalle de su operación
         </Text>
-        <View className="pl-4 pr-4 mt-6">
+        <View className="pl-5 pr-5 mt-6">
           <SubmitButton
-            text="Ya hice mi transferencia"
+            text="YA HICE MI TRANSFERENCIA"
             onPress={() => nav.navigate("Voucher" as never)}
           />
         </View>

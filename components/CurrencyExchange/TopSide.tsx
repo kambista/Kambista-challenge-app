@@ -12,7 +12,7 @@ export default function TopSide() {
       <View className="flex-1 pr-10">
         <Image
           className="w-40 h-12 self-center"
-          source={require("../../assets/kambista_logo.png")}
+          source={require("../../assets/KambistaLogo.png")}
         />
       </View>
     </View>

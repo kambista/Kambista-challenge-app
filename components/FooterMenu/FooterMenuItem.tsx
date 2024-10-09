@@ -1,4 +1,4 @@
-import { Image, Text, TouchableOpacity, View } from "react-native";
+import { Image, Text, TouchableOpacity } from "react-native";
 
 export default function FooterMenuItem({ title, source, style, onPress }: any) {
   return (

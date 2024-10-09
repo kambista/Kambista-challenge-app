@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Pressable, Text, TouchableOpacity } from "react-native";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { getTexts } from "../util/textFormatter";

@@ -8,6 +8,7 @@ import { useNavigation } from "@react-navigation/native";
 import { TEXT_CONSTANTS } from "../util/constants";
 import { useStore } from "../store/store";
 import { useState } from "react";
+import ScreenTitle from "../components/ScreenTitle";
 
 export default function Voucher() {
   const nav = useNavigation();
@@ -26,22 +27,33 @@ export default function Voucher() {
           className="self-center w-[48px] h-[53px]"
           source={require("../assets/Voucher.png")}
         />
-        <Text className="font-montserrat-bold text-2xl self-center mt-3 mb-6">
-          Envía tu constancia
-        </Text>
+        <ScreenTitle title="Envía tu constancia" textStyle="mt-3 mb-6" />
         <Text className="font-montserrat-regular text-[16px] mb-3 ">
-          Escribe el código de operación del banco aquí
+          Escribe el{" "}
+          <Text className="font-montserrat-semibold text-kambista-blue">
+            código de operación{" "}
+          </Text>{" "}
+          del banco aquí:
         </Text>
-        <KambistaInput numeric onChangeText={handleInputChange} />
+        <KambistaInput
+          numeric
+          onChangeText={handleInputChange}
+          containerStyle="mb-3"
+          inputStyle="text-center font-montserrat-semibold text-[16px]"
+        />
         <InfoBox
           style="p-0 items-center"
           infoStyle="text-[12px]"
+          imageStyle="w-5 h-5"
           texts={TEXT_CONSTANTS.WhereIsTheCode}
         />
-        <Text className="font-montserrat-regular text-gray-input text-[15px]  mt-6">
+        <Text className="font-montserrat-regular text-gray-input text-[15px] mt-6 pr-7">
           Verificaremos tu operación para depositar{" "}
-          {!isExchangeBid ? "$ " : "S/ "}
-          {exchange} a tu cuenta.
+          <Text className="font-montserrat-semibold text-kambista-blue">
+            {!isExchangeBid ? "$ " : "S/ "}
+            {exchange}
+          </Text>
+          {" a tu cuenta."}
         </Text>
       </WhiteContainer>
       <Text className="font-montserrat-bold text-gray-input text-md self-center mt-3 text-center underline">

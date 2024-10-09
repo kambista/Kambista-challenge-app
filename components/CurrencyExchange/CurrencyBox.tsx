@@ -1,11 +1,9 @@
-import { Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Text, TextInput, View } from "react-native";
 import { useStore } from "../../store/store";
-import { useEffect, useState } from "react";
 
 export default function CurrencyBox({
   title,
   currency,
-  value,
   handleInputChange,
   type,
 }: any) {

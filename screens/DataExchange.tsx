@@ -7,6 +7,9 @@ import { useNavigation } from "@react-navigation/native";
 import KambistaSelector from "../components/KambistaSelector";
 import { SELECTOR_ITEMS, TEXT_CONSTANTS } from "../util/constants";
 import { useStore } from "../store/store";
+import ScreenTitle from "../components/ScreenTitle";
+import TransactionInfoText from "../components/DataExchange.tsx/TransactionInfoText";
+import TimeToChange from "../components/DataExchange.tsx/TimeToChange";
 
 export default function DataExchange() {
   const nav = useNavigation();
@@ -16,35 +19,35 @@ export default function DataExchange() {
   const isExchangeBid = useStore((state: any) => state.isExchangeBid);
   const localBidRate = useStore((state: any) => state.localBidRate);
   const localAskRate = useStore((state: any) => state.localAskRate);
+  const updateDestinationBank = useStore(
+    (state: any) => state.updateDestinationBank
+  );
+
+  function updateDestinationBankHandler(newDestinationBank: any) {
+    console.log("newDestinationBank", newDestinationBank);
+    updateDestinationBank(newDestinationBank);
+  }
 
   return (
     <KambistaBackground style="bg-white-background" step={1} backButtons>
       <ScrollView>
-        <Text className="font-montserrat-regular text-md self-center mt-5">
-          El tipo de cambio podría actualizar en 00:00:00
-        </Text>
-        <Text className="font-montserrat-bold text-2xl self-center mt-3 text-center">
-          Completa los datos de tu operación
-        </Text>
-        <WhiteContainer style="mt-7">
-          <View className="flex-row justify-between">
-            <Text className="font-montserrat-regular text-[16px] mb-2.5">
-              Tú envías
-            </Text>
-            <Text className="font-montserrat-bold text-[16px]">
-              {isExchangeBid ? "$ " : "S/ "}
-              {amount.toFixed(2)}
-            </Text>
-          </View>
-          <View className="flex-row justify-between border-b border-gray-300 ">
-            <Text className="font-montserrat-regular text-[16px] mb-2.5 ">
-              Tú recibes
-            </Text>
-            <Text className="font-montserrat-bold text-[16px]">
-              {isExchangeBid ? "S/ " : "$ "}
-              {exchange.toFixed(2)}
-            </Text>
-          </View>
+        <TimeToChange time={"13:10"} />
+        <ScreenTitle
+          title="Completa los datos de tu operación"
+          textStyle={"mt-3"}
+        />
+        <WhiteContainer style="mt-6">
+          <TransactionInfoText
+            text="Tú envías"
+            currency={isExchangeBid ? "$ " : "S/ "}
+            amount={amount}
+          />
+          <TransactionInfoText
+            text="Tú recibes"
+            currency={isExchangeBid ? "S/ " : "$ "}
+            amount={exchange}
+            cointainerStyle="border-b border-gray-300"
+          />
           <Text className="font-montserrat-bold text-[12px] mt-2.5">
             Tipo de cambio utilizado{" "}
             {
@@ -57,7 +60,7 @@ export default function DataExchange() {
         </WhiteContainer>
         <View className="pl-4 pr-4 mt-3">
           <InfoBox
-            style="bg-blue-info mb-6"
+            style="bg-blue-info mb-4"
             infoStyle="text-blue-900"
             texts={TEXT_CONSTANTS.EstimatedTime}
           />
@@ -68,18 +71,22 @@ export default function DataExchange() {
             placeholder="Selecciona"
             items={SELECTOR_ITEMS.banks}
             containerStyle="mb-4"
+            style="font-montserrat-semibold"
           />
           <KambistaSelector
             title="¿En qué cuenta deseas recibir tu dinero?"
             placeholder="Selecciona"
             items={SELECTOR_ITEMS.accounts}
             containerStyle="mb-4"
+            style="font-montserrat-semibold"
+            onValueChange={updateDestinationBankHandler}
           />
           <KambistaSelector
             title="Origen de fondos"
             placeholder="Selecciona"
             items={SELECTOR_ITEMS.foundSource}
-            containerStyle="mb-9"
+            containerStyle="mb-8"
+            style="font-montserrat-semibold"
           />
           <SubmitButton
             text="CONTINUAR"

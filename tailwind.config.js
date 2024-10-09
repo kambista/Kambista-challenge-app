@@ -17,7 +17,7 @@ module.exports = {
         "kambista-green": "#00E3C2",
         "gray-input": "#686868",
         "gray-input-border": "#CCCCCC",
-        "blue-info": "#E8F3FEBF",
+        "blue-info": "#E8F3FE",
         "circle-gray": "#19223221",
       },
       fontFamily: {

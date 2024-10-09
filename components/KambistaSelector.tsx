@@ -2,13 +2,22 @@ import { StyleSheet, Text, View } from "react-native";
 import RNPickerSelect from "react-native-picker-select";
 import AntDesign from "@expo/vector-icons/AntDesign";
 
+interface KambistaSelectorProps {
+  title?: string;
+  items: any;
+  style?: string;
+  placeholder?: string;
+  containerStyle?: string;
+  onValueChange?: any;
+}
 export default function KambistaSelector({
   title,
   items,
   style,
   placeholder,
   containerStyle,
-}: any) {
+  onValueChange,
+}: KambistaSelectorProps) {
   return (
     <View className={`${containerStyle}`}>
       {title && (
@@ -28,7 +37,13 @@ export default function KambistaSelector({
               <AntDesign name="down" size={16} color="#686868" />
             </View>
           )}
-          onValueChange={(value) => console.log(value)}
+          onValueChange={
+            onValueChange
+              ? (value) => onValueChange(value)
+              : (value) => {
+                  console.log(value);
+                }
+          }
           style={styles}
           items={items}
         />

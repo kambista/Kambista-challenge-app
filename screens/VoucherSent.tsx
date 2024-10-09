@@ -12,7 +12,7 @@ export default function VoucherSent() {
   const isExchangeBid = useStore((state: any) => state.isExchangeBid);
   return (
     <KambistaBackground style="bg-white-background">
-      <WhiteContainer style="pt-0 border border-gray-300">
+      <WhiteContainer style="pt-0  border border-gray-300">
         <Image
           className="self-center w-[120px] h-[120px] "
           source={require("../assets/MonedasCerdito.png")}

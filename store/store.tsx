@@ -9,6 +9,9 @@ export const useStore = create((set) => ({
   savingsRate: 0,
   localBidRate: 3.713,
   localAskRate: 3.833,
+  destinationBank: "",
+  updateDestinationBank: (newDestinationBank: any) =>
+    set({ destinationBank: newDestinationBank }),
   updateSavingsRate: (newSavings: any) => set({ savingsRate: newSavings }),
   updateRate: (newRate: any) => set({ rate: newRate }),
   updateIsExchangeBid: (newIsExchangeBid: any) =>

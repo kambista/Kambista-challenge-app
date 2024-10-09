@@ -24,7 +24,7 @@ export default function KambistaBackground({
     <ImageBackground
       className="flex-1"
       resizeMode="stretch"
-      source={require("../assets/kambistaBackground.jpeg")}
+      source={require("../assets/KambistaBackground.jpeg")}
     >
       <View className="h-[5%] flex-row justify-between pl-5 pr-5 items-center">
         {backButtons && (
